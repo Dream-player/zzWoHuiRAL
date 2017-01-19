@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:background="@drawable/pop_order_type_bg"
+              android:divider="@drawable/linear_layout_divider_d2"
+              android:orientation="vertical"
+              android:showDividers="middle">
+
+    <TextView
+        android:id="@+id/tvAllOrder"
+        style="@style/popOrderTypeStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="全部订单"/>
+
+    <TextView
+        android:id="@+id/tvNoEvaluateOrder"
+        style="@style/popOrderTypeStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="未评价"/>
+
+    <TextView
+        android:id="@+id/tvRefundOrder"
+        style="@style/popOrderTypeStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="退款订单"/>
+
+</LinearLayout>

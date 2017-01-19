@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/mainBGColor"
+    android:orientation="vertical"
+    android:paddingLeft="5dp"
+    android:paddingTop="3dp"
+    >
+
+    <TextView
+        android:id="@+id/poiName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:text="迎春街"
+        android:textColor="@color/color_333"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/poiAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dp"
+        android:text="河南省郑州市中原区"
+        android:textColor="@color/color_999"/>
+
+
+</LinearLayout>

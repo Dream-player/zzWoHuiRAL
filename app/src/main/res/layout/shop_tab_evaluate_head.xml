@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/head_shop_evaluate_margin_top"
+              android:background="@color/white"
+              android:gravity="center_vertical"
+              android:orientation="horizontal"
+              android:padding="@dimen/head_shop_evaluate_padding">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvShopGrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4.2"
+            android:textColor="@color/color_red"
+            android:textSize="35sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="综合评分"
+            android:textColor="@color/color_666"
+            android:textSize="12sp"
+            />
+
+        <TextView
+            android:id="@+id/tvShopRanking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/head_shop_evaluate_tv_ranking_margin_top"
+            android:text="高于周边商家58%"
+            android:textColor="@color/color_999"
+            android:textSize="12sp"
+            android:visibility="gone"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/color_d2"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/head_shop_evaluate_ll_margin_top"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="服务态度"/>
+
+            <RatingBar
+                android:id="@+id/ratingBarService"
+                style="@style/roomRatingBar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/head_shop_evaluate_rb_margin_left"
+                android:numStars="5"
+                android:isIndicator="true"
+                android:rating="4.5"
+                android:layout_gravity="center">
+            </RatingBar>
+
+            <TextView
+                android:id="@+id/tvGradeService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="3dp"
+                android:text="4.5分"
+                android:textColor="@color/color_red"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/head_shop_evaluate_ll_margin_top"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="综合评价"/>
+
+            <RatingBar
+                android:id="@+id/ratingBarGoods"
+                style="@style/roomRatingBar"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/head_shop_evaluate_rb_margin_left"
+                android:numStars="5"
+                android:isIndicator="true"
+                android:rating="4"
+                android:layout_gravity="center">
+            </RatingBar>
+
+            <TextView
+                android:id="@+id/tvGradeGoods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/head_shop_evaluate_tv_grade_margin_left"
+                android:text="4.5分"
+                android:textColor="@color/color_red"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

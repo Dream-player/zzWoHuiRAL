@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/mainBGColor"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/all_activity_title"/>
+
+    <EditText
+        android:id="@+id/etOldPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:hint="原密码"
+        android:inputType="textPassword"
+        android:padding="13dp"
+        android:textColor="@color/color_333"
+        android:textColorHint="@color/color_333"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_d2"/>
+
+    <EditText
+        android:id="@+id/etNewPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:hint="新密码"
+        android:inputType="textPassword"
+        android:padding="13dp"
+        android:textColor="@color/color_333"
+        android:textColorHint="@color/color_333"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_d2"/>
+
+    <EditText
+        android:id="@+id/etConfirmNewPwd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:hint="确认新密码"
+        android:inputType="textPassword"
+        android:padding="13dp"
+        android:textColor="@color/color_333"
+        android:textColorHint="@color/color_333"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="密码长度4~16个字符"
+        android:padding="13dp"
+        android:textColor="@color/color_666"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnSubmitChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确认修改"
+        android:padding="13dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:background="@drawable/loginbtn_bg"
+        />
+
+
+</LinearLayout>

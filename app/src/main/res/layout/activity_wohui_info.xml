@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <include
+        layout="@layout/all_activity_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/logo_whinfo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="16sp"
+                android:textColor="#999"
+                android:text="  我惠集团是一家荟萃各界优秀精英、汇合各项优势资源、汇总各式优异理念、汇集各类 优质商品、以整合为起点、以共赢求发展、以创新求永生的现代化、集团化、高科技、成长 型、创新型的公司。\n  我惠集团总部现座落于中原腹地的现代化、国际化、大型商贸城市、河南省会——郑州 。集团以“让更多的消费者少花冤枉钱”为企业使命！以“打造中国最大的团购消费联盟” 为企业愿景！以“消费者就是商家利益共享的合伙人”为战略思想！以“资源整合、异业结 盟、翻牌连锁、合作共赢、差异化、人无我有、人有我优、脱离竞争”为经营理念！以“团 购消费、集中采购、厂家供货、专业服务”为工作指针！从成立之初到未来，我惠集团坚持 做到：全力以赴汇聚万家商品，优惠千家万户！" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

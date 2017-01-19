@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/mainBGColor"
+              android:orientation="vertical">
+
+
+    <include
+        layout="@layout/item_user_address_manage"/>
+
+    <LinearLayout
+        android:id="@+id/llCheckAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/icon_address_position"
+            />
+
+        <TextView
+            style="@style/confirmOrderTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:text="选择收货地址"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/order_address_bottom"/>
+
+    <include
+        layout="@layout/split_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/split_line"
+            />
+
+        <LinearLayout
+            android:id="@+id/llDeliverStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="13dp">
+
+            <TextView
+                style="@style/confirmOrderTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="配送方式"
+                />
+
+            <TextView
+                android:id="@+id/tvDeliverStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="送货上门"
+                android:textColor="@color/color_999"
+                android:textSize="14sp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/uc_icon_arrow_right"/>
+        </LinearLayout>
+
+        <include
+            layout="@layout/split_line"
+            />
+
+        <LinearLayout
+            android:id="@+id/llOrderRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="13dp">
+
+            <TextView
+                style="@style/confirmOrderTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="订单备注"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/uc_icon_arrow_right"/>
+        </LinearLayout>
+        <include
+            layout="@layout/split_line"
+            />
+        <EditText
+            android:id="@+id/et_message_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:minLines="3"
+            android:maxLines="3"
+            android:maxLength="200"
+            android:hint="请输入您的需求!"
+            android:background="@drawable/order_first_evaluate_bg"
+            android:visibility="gone"/>
+        <include
+            layout="@layout/split_line"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/split_line"
+            />
+
+        <LinearLayout
+            android:id="@+id/llPayOnLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="13dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/confirmOrderTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="在线支付"
+                />
+
+            <ImageView
+                android:id="@+id/ivPayOnline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/confirm_order_checked"/>
+        </LinearLayout>
+
+        <include
+            layout="@layout/split_line"
+            />
+
+        <LinearLayout
+            android:id="@+id/llPayOnFace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="13dp"
+            android:visibility="gone">
+
+            <TextView
+                style="@style/confirmOrderTextStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="货到付款"
+                />
+
+            <ImageView
+                android:id="@+id/ivPayOnFace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/confirm_order_checked"/>
+        </LinearLayout>
+
+        <include
+            layout="@layout/split_line"
+            />
+    </LinearLayout>
+</LinearLayout>

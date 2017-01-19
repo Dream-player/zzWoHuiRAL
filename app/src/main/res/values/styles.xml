@@ -1,0 +1,112 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowAnimationStyle">@style/FeelyouWindowAnimTheme</item>
+    </style>
+
+    <style name="tabHostContentName">
+        <item name="android:textColor">@drawable/tab_content_name_selector</item>
+    </style>
+
+    <style name="userCenterMenu">
+        <item name="android:paddingBottom">@dimen/style_usercenterMenu_padding</item>
+        <item name="android:paddingTop">@dimen/style_usercenterMenu_padding</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="FeelyouWindowAnimTheme" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/out_from_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_from_right</item>
+    </style>
+
+    <style name="Holo.ProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/progress_holo</item>
+    </style>
+
+    <style name="roomRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/room_rating_bar</item>
+        <item name="android:minHeight">@dimen/RatingBar_minHeight</item>
+        <item name="android:maxHeight">@dimen/RatingBar_maxHeight</item>
+    </style>
+
+    <style name="orderListItemBtnBg">
+        <item name="android:background">@drawable/order_list_item_btn_bg</item>
+        <item name="android:minHeight">1dp</item>
+        <item name="android:minWidth">1dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="orderListItemBtnConfirmBg">
+        <item name="android:background">@drawable/order_list_btn_confirm_receipt</item>
+        <item name="android:minHeight">1dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+    <style name="orderListItemBtnRefundStyle">
+        <item name="android:background">@drawable/order_list_item_btn_refund_bg</item>
+        <item name="android:minHeight">1dp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="myShopCartPopStyle">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim_shopcart</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_anim_shopcart</item>
+    </style>
+
+    <style name="confirmOrderTextStyle">
+        <item name="android:textColor">@color/color_333</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="OrderNodeActiveTextStyle">
+        <item name="android:textColor">@drawable/order_active_text_color</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="NormalEditTextStyle">
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:textCursorDrawable">@drawable/edittext_cursor_color</item>
+        <item name="android:textColorHint">@color/color_999</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="UserInfoBTitleStyle">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:background">@color/color_ddd</item>
+        <item name="android:textColor">@color/color_666</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">13dp</item>
+    </style>
+
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="orderListGoodsNumStyle">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/color_666</item>
+    </style>
+
+    <style name="orderListGoodsNumStyle2">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_333</item>
+    </style>
+
+    <style name="popOrderTypeStyle">
+        <item name="android:textColor">@color/pop_order_type</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">10dp</item>
+    </style>
+</resources>

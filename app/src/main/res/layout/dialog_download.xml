@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f5f5f5"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="center"
+        android:textColor="#31b5e6"
+        android:textSize="20sp"
+        android:text="@string/msg_downloading" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#31b5e6" />
+
+    <whcs.wohui.zz.utils.updateApp.ui.RoundProgressBar
+        android:id="@+id/roundProgressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"/>
+     <!--   android_custom:roundColor="#C6E2FF"
+        android_custom:roundProgressColor="#CD3333"
+        android_custom:roundWidth="20dip"
+        android_custom:textIsDisplayable="true"
+        android_custom:textSize="22sp" -->
+
+</LinearLayout>

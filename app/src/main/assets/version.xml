@@ -1,0 +1,6 @@
+<version>
+    <versionCode>2</versionCode>
+    <versionName>1.1</versionName>
+    <apkUrl>你的服务器端version.xml的地址</apkUrl>
+    <description>更新内容：修复了..bug。</description>
+</version>

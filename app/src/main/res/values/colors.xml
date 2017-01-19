@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="mainColor">#FF8A17</color>
+    <color name="titleEditCursor">#fcc489</color>
+    <color name="mainBGColor">#EEEEEC</color>
+    <color name="titleColor">#ff7c17</color>
+    <color name="homeTabHostBg">#F6F6F6</color>
+    <color name="homeTabHostTitleLine">#C8CACC</color>
+    <color name="splitLineColor">#EAEAEA</color>
+    <color name="homeTabHostNameSelect">#FF8A17</color>
+    <color name="homeTabHostNameNormal">#AAAAAA</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_2">#f1f1f1</color>
+    <color name="goodsCategoryListBG">#F2F2F2</color>
+    <color name="homeFragmentRefreshColor">#FF8A17</color>
+    <color name="MyProgressDialog_default_color">#b1000000</color>
+    <color name="kprogresshud_grey_color">#449E9E9E</color>
+    <color name="userCenterMenuColor">#3e3e3e</color>
+    <color name="orderSuccess">#FF6000</color>
+    <color name="color_888">#888888</color>
+    <color name="color_ddd">#ffdddddd</color>
+    <color name="color_333">#333333</color>
+    <color name="color_999">#999999</color>
+    <color name="color_666">#666666</color>
+    <color name="color_d2">#D2D2D2</color>
+    <color name="color_red">#FE0000</color>
+    <color name="color_red_2">#a5FE0000</color>
+    <color name="color_eee">#EEEEEE</color>
+    <color name="color_light_blue">#2E90E9</color>
+    <color name="color_F8">#F8F8F8</color>
+    <color name="green_dark">#ff25a044</color>
+    <color name="green_light">#ff4dc060</color>
+    <color name="green_light2">#ff58d178</color>
+    <color name="red_for_envelopes">#ffd8584a</color>
+    <color name="grey_white_pressed">#ffcccccc</color>
+    <color name="pop_order_type">#737782</color>
+    <!-- 浅石板灰 -->
+    <color name="lightslategray">#778899</color>
+    <!-- 淡钢蓝 -->
+    <color name="lightsteelblue">#B0C4DE</color>
+    <!-- 薰衣草花的淡紫色 -->
+    <color name="lavender">#E6E6FA</color>
+</resources>

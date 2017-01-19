@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">我惠云超</string>
+    <string name="url_version">http://yd.api.wohui365.com/update.aspx</string>
+    <string name="title_dialog_update">版本更新</string>
+    <string name="msg_dialog_update">检测到新版本，请下载更新。安装过程中请保持网络连接..</string>
+    <string name="wireless_setting">取消</string>
+    <string name="download_apk">下载更新</string>
+    <string name="msg_downloading">正在下载apk..</string>
+    <string name="shop_name">我惠超市——翠竹街店</string>
+</resources>

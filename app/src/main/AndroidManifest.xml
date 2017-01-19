@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="whcs.wohui.zz.whcouldsupermarket"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+
+
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="whcs.wohui.zz.activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.ShopMapActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name="whcs.wohui.zz.activity.BDMapActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.ShopActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.OkHttpTestActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.LoginActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.SearchLocationActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.EvaluateOrderActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.OrderDetailsActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.RefundDetailsActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.ApplyRefundActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.MoreActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.UserInfoActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.ChangePwdActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.AddressManageActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.EditAddressActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.UserCollectionActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.ShopLocationActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.WHInfoActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.AddUserLocationActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.ShopGoodsActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.GoodsDetailActivity"/>
+        <activity
+            android:name="whcs.wohui.zz.activity.ShopSearchActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
+        <activity android:name="whcs.wohui.zz.activity.ConfirmOrderActivity"/>
+        <activity android:name="whcs.wohui.zz.activity.PayOrderActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="wx13bf97f80b2a6343"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="F95UnGIxC9bQtyfyoq1FGGdiwBhX6wwS"/>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"
+            android:exported="true">
+        </service>
+        <service
+            android:name="whcs.wohui.zz.utils.updateApp.todo.DownloadService">
+
+        </service>
+
+        <receiver
+            android:name="net.sourceforge.simcpux.AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

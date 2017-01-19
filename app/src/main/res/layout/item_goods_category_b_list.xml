@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llCategoryBTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/goodsCategoryListBG"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCategoryBName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="8dp"
+            android:text="进口营养食品"
+            android:textColor="@color/color_333"
+            android:textSize="17sp"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/icon_goods_category_b"/>
+    </LinearLayout>
+
+
+    <whcs.wohui.zz.myview.MyGridViewInListView
+        android:id="@+id/gvCategoryC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent"
+        android:numColumns="3"
+        android:padding="@dimen/item_goods_category_b_gv_padding"
+        />
+</LinearLayout>

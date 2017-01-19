@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/mainBGColor"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+    <include layout="@layout/all_activity_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="13dp"
+                android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvShopName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textColor="@color/color_333"
+                        android:textSize="16sp"/>
+<!--
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="13dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@color/color_d2"/>-->
+
+                <!--<RelativeLayout
+                    android:visibility="visible"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/ivGoodsImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="3dp"
+                        android:background="@drawable/icon_logo_image_default"/>
+
+                    <LinearLayout
+                        android:id="@+id/llGoodsName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/ivGoodsImage"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvGoodsName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="商品名称商品名称商品名称"
+                            android:textColor="@color/color_333"/>
+
+                        <TextView
+                            android:id="@+id/tvGoodsPrice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="¥25.00"
+                            android:textColor="@color/color_333"/>
+                    </LinearLayout>
+                </RelativeLayout>-->
+
+  <!--              <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/color_d2"/>-->
+
+                <!--<LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        />
+
+                    <TextView
+                        android:id="@+id/tvGoodsNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:text="共1件商品"
+                        android:textColor="@color/color_333"/>
+
+                    <TextView
+                        android:id="@+id/tvFactMoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="实付：¥25.00"
+                        android:textColor="@color/color_333"/>
+                </LinearLayout>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="13dp">
+                <LinearLayout
+                    android:id="@+id/ll_first_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+<!--                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="初次评价"
+                        android:textColor="@color/color_333"
+                        android:textSize="18sp"
+                        android:visibility="gone"/>-->
+
+<!--                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@color/color_d2"/>-->
+
+                    <LinearLayout
+                        android:id="@+id/ll_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/color_red"
+                            android:textSize="17sp"/>
+
+                        <TextView
+                            android:id="@+id/tv_comment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="订单评价"
+                            android:textColor="@color/color_666"
+                            android:textSize="17sp"/>
+
+                        <RatingBar
+                            android:id="@+id/rbMark"
+                            style="@style/roomRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:isIndicator="false"
+                            android:numStars="5"
+                            android:rating="0">
+                        </RatingBar>
+                    </LinearLayout>
+                    <EditText
+                        android:id="@+id/tvFirstEstContent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/order_first_evaluate_bg"
+                        android:padding="10dp"
+                        android:hint="请提出您的宝贵意见"
+                        android:textColor="@color/color_666"
+                        android:textSize="15sp"
+                        android:maxLines="10"
+                        android:minLines="3"/>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvAppendEstimate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="商家回复"
+                    android:textColor="@color/color_333"
+                    android:textSize="17sp"
+                    android:visibility="gone"/>
+
+                <TextView
+                    android:id="@+id/etWriteEstimate"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edittext_stroke_bg"
+                    android:enabled="true"
+                    android:gravity="top"
+                    android:hint="请写下对商品的评价，对别人很重要哦~"
+                    android:inputType="textMultiLine"
+                    android:maxLines="10"
+                    android:minLines="3"
+                    android:padding="2dp"
+                    android:scrollbars="vertical"
+                    android:textSize="15sp"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btnSubmitEstimate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/loginbtn_bg"
+                    android:padding="10dp"
+                    android:text="发表评价"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

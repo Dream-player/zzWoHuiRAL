@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/mainBGColor"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+    <include
+        layout="@layout/all_activity_title"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/yellow_bg"
+                android:orientation="vertical"
+                android:paddingBottom="13dp"
+                android:paddingLeft="13dp"
+                android:paddingRight="8dp"
+                android:paddingTop="13dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:text="订单总价"
+                        android:textColor="@color/red_for_envelopes"
+                        android:textSize="17.0sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvOrderPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/red_for_envelopes"
+                        android:textSize="17.0sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+
+                        android:text="返利"
+                        android:textColor="@color/red_for_envelopes"
+                        android:textSize="17.0sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvOrderIntegral"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="7.0"
+                        android:textColor="@color/red_for_envelopes"
+                        android:textSize="17.0sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:divider="@drawable/linearlayout_devider_transparent"
+                android:orientation="vertical"
+                android:padding="13dp"
+                android:showDividers="middle">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:text="请选择支付方式:"
+                    android:textColor="@color/color_333"
+                    android:textSize="17sp"
+                    android:textStyle="bold"/>
+
+
+                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                    android:id="@+id/payMethodWX"
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    custom:methodImage="@drawable/pay_icon_wechat"
+                    custom:methodIsMark="true"
+                    custom:methodMark="推荐安装微信客户端的用户使用"
+                    custom:methodTitle="微信支付"/>
+
+                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                    android:id="@+id/payMethodAL"
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    custom:methodImage="@drawable/pay_icon_alipay"
+                    custom:methodIsMark="true"
+                    custom:methodMark="推荐安装支付宝客户端的用户使用"
+                    custom:methodTitle="支付宝支付"
+                    android:visibility="gone"/>
+
+                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                    android:id="@+id/payMethodWH"
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    custom:methodImage="@drawable/pay_icon_whpay"
+                    custom:methodIsMark="true"
+                    custom:methodMark="推荐我惠卡会员使用"
+                    custom:methodTitle="我惠卡支付"/>
+                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                    android:id="@+id/payMethodXFJJ"
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    custom:methodImage="@drawable/pay_icon_xfjj"
+                    custom:methodIsMark="true"
+                    custom:methodMark="推荐我惠卡会员使用"
+                    custom:methodTitle="消费奖金支付"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:hint="支付密码"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:textColorHint="@color/color_999"
+                android:textSize="17sp"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/payOrder"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/selector_green_corners_button"
+                android:gravity="center"
+                android:padding="13dp"
+                android:text="确认支付"
+                android:textColor="@color/white"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

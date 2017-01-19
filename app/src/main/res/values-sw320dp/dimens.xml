@@ -1,0 +1,21 @@
+<resources>
+    <!-- Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively). -->
+    <dimen name="xiaomi_wide">160dp</dimen>
+    <dimen name="fragment_home_title_bar_height">48dp</dimen><!--首页标题栏高度-->
+    <dimen name="fragment_home_title_bar_padding">8.8dp</dimen><!--首页标题栏留白-->
+    <dimen name="fragment_home_title_bar_im_leftpadding">26.6dp</dimen><!--定位图片左侧外边距-->
+    <dimen name="fragment_home_title_bar_tv_margin">4.4dp</dimen><!--轮播文字左右外边距-->
+    <dimen name="fragment_home_title_bar_margin_right">8.8dp</dimen><!--首页标题栏内容右侧外边距-->
+    <dimen name="title_all_padding_bottom_top">12.4dp</dimen><!--总标题栏底上部部内边距-->
+    <dimen name="title_all_padding_right">7dp</dimen><!--总标题栏顶部内边距-->
+    <dimen name="title_all_back_padding_left">17.7dp</dimen><!--总标题栏返回按键左侧内边距-->
+    <dimen name="title_all_text_margin_left">8.8dp</dimen><!--总标题栏文字左侧外边距-->
+    <dimen name="title_all_sousuo_padding_left">13dp</dimen><!--总标题栏“搜索”左侧内边距-->
+    <dimen name="title_all_sousuo_padding_right">4.4dp</dimen><!--总标题栏“搜索”右侧内边距-->
+    <dimen name="RatingBar_minHeight">10.6dp</dimen><!--五星评论的最小高度-->
+    <dimen name="RatingBar_maxHeight">11.5dp</dimen><!--五星评论的最大宽度-->
+    <dimen name="Banner_height">110dp</dimen>
+    <dimen name="no_data_padding">86dp</dimen>
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/mainBGColor"
+              android:fitsSystemWindows="true"
+              android:orientation="vertical">
+
+    <include layout="@layout/all_activity_title"
+        />
+
+    <LinearLayout
+        android:id="@+id/llLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="48.0dip"
+        android:layout_marginTop="10dp"
+        android:addStatesFromChildren="true"
+        android:background="@drawable/selector_text_field"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:hint="定位当前位置"
+            android:paddingLeft="16.0dip"
+            android:paddingRight="10.0dip"
+            android:singleLine="true"
+            android:textColor="#ff555555"
+            android:textColorHint="@color/mainColor"
+            android:textSize="16.0sp"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/ivLocationIC"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:paddingLeft="10.0dip"
+                android:paddingRight="10.0dip"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_locaion_search_address"/>
+
+            <ProgressBar
+                android:id="@+id/address_suggestion_locating"
+                style="@style/Holo.ProgressBar"
+                android:layout_width="28.0dip"
+                android:layout_height="28.0dip"
+                android:layout_gravity="center"
+                android:visibility="invisible"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvAddressList"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:divider="@drawable/linearlayout_divider_ddd_one_px"
+        android:orientation="vertical"
+        android:showDividers="end|middle"></ListView>
+
+
+</LinearLayout>

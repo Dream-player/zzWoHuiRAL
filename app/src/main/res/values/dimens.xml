@@ -1,0 +1,56 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="tab_top_fontsize">15sp</dimen>
+    <dimen name="xiaomi_wide">10dp</dimen>
+    <dimen name="fragment_usercenter_login_margin_left">20dp</dimen><!--用户是否登录模块左侧外边距-->
+    <dimen name="fragment_usercenter_login_iv_margin_right">20dp</dimen><!--进入图片，右侧外边距-->
+    <dimen name="fragment_usercenter_login_tv_margin_lift">18dp</dimen><!--登录字样与左面图片的距离-->
+    <dimen name="fragment_usercenter_item_icon_margin_left">10dp</dimen><!--条目的图标左侧外边距-->
+    <dimen name="fragment_usercenter_item_tv_margin_left">15dp</dimen><!--条目的标题左侧外边距-->
+    <dimen name="fragment_usercenter_item_iv_margin_right">15dp</dimen><!--进入其他页面小图标右侧外边距-->
+    <dimen name="style_usercenterMenu_padding">15dp</dimen><!--用户中心条目的上下内边距-->
+    <dimen name="item_order_padding">13dp</dimen><!--订单条目的内边距-->
+    <dimen name="item_order_tv_time_margin_left">15dp</dimen><!--订单条目时间的外边距-->
+    <dimen name="item_order_tv_divide1_margin_top">8dp</dimen><!--订单条目分割线一的上外边距-->
+    <dimen name="item_order_tv_divide1_margin_bottom">5dp</dimen><!--订单条目分割线一的下外边距-->
+    <dimen name="item_order_gv_column_width">80dp</dimen><!--订单条目grid view 没列的宽度-->
+    <dimen name="item_order_ll_price_margin_top">8dp</dimen><!--订单条目总金额距离grid view距离-->
+    <dimen name="item_order_tv_divide2_margin_top">12dp</dimen><!--订单条目分割线2的上外边距-->
+    <dimen name="item_order_tv_divide2_margin_bottom">12dp</dimen><!--订单条目分割线2的下外边距-->
+    <dimen name="item_order_btn_margin_right">8dp</dimen><!--订单条目订单状态按钮左侧外边距-->
+    <dimen name="activity_shop_indicator_height">45dp</dimen><!--超市页面指示器高度-->
+    <dimen name="item_order_goods_iv_height_width">60dp</dimen><!--订单列表中商品图片的大小-->
+    <dimen name="item_order_goods_tv_margin_top">5dp</dimen><!--订单列表中商品名称和图片的距离-->  `
+    <dimen name="item_goods_category_a_tv_margin_top_bottom">15dp</dimen><!--超市商品模块a列表字体上下外边距-->
+    <dimen name="item_goods_category_a_tv_margin_right">20dp</dimen><!--超市商品模块a列表字体右侧外边距-->
+    <dimen name="item_goods_category_b_gv_padding">15dp</dimen><!--超市商品模块b列表中grid view 内边距-->
+    <dimen name="item_goods_category_c_tv_padding">10dp</dimen><!--超市商品模块c列表中字体内边距-->
+    <dimen name="head_shop_evaluate_margin_top">8dp</dimen><!--超市评价模块头部外边距-->
+    <dimen name="head_shop_evaluate_padding">15dp</dimen><!--超市评价模块头部内边距-->
+    <dimen name="head_shop_evaluate_tv_ranking_margin_top">7dp</dimen><!--超市评价模块头部超市排名描述顶部外边距-->
+    <dimen name="head_shop_evaluate_ll_margin_top">10dp</dimen>
+    <dimen name="head_shop_evaluate_rb_margin_left">10dp</dimen>
+    <dimen name="head_shop_evaluate_tv_grade_margin_left">3dp</dimen>
+    <dimen name="item_shop_evaluate_ll_p">10dp</dimen>
+    <dimen name="item_shop_evaluate_iv_user_m">10dp</dimen>
+    <dimen name="item_shop_evaluate_ll_m">10dp</dimen>
+    <dimen name="item_shop_evaluate_tv_grade_ml">8dp</dimen>
+    <dimen name="item_shop_evaluate_tv_comment_mt">5dp</dimen>
+    <dimen name="fragment_shopstore_ll_mt">8dp</dimen>
+    <dimen name="fragment_shopstore_ll_p">10dp</dimen>
+    <dimen name="fragment_shopstore_tv_mb_shopname">5dp</dimen>
+    <dimen name="fragment_shopstore_tv_mt_BusinessHours">5dp</dimen>
+    <dimen name="fragment_shopstore_tv_mt_notify">10dp</dimen>
+
+
+    <dimen name="Banner_height">110dp</dimen>
+
+
+    <dimen name="no_data_padding">80dp</dimen>
+
+    <dimen name="edit_address_text_size">14sp</dimen>
+
+
+</resources>
