@@ -31,8 +31,6 @@ import java.util.concurrent.TimeUnit;
 
 import whcs.wohui.zz.url.Urls;
 import whcs.wohui.zz.utils.LogUtils;
-import whcs.wohui.zz.utils.MyOkHttpUtils;
-import whcs.wohui.zz.utils.MyRequestParams;
 import whcs.wohui.zz.utils.updateApp.multithread.DownloadProgressListener;
 import whcs.wohui.zz.utils.updateApp.multithread.FileDownloader;
 import whcs.wohui.zz.utils.updateApp.util.CommonUtil;
@@ -50,15 +48,10 @@ import whcs.wohui.zz.whcouldsupermarket.R;
  */
 public class WelcomeActivity extends Activity {
     private static final String TAG = "WelcomeActivity";
-    private MyOkHttpUtils myOkHttpUtils;
-    private MyRequestParams params;
     private String pathSaved;//apk文件保存根目录
     private ProgressDialog pd;//更新进度条
     private File apkFile;//下载文件
-    private void initData() {
-        myOkHttpUtils = new MyOkHttpUtils();
-        params = new MyRequestParams();
-    }
+
 
     /**
      * 跳转到主页
@@ -105,7 +98,6 @@ public class WelcomeActivity extends Activity {
             LogUtils.e(TAG,"没有权限");
         }
         initProgressBar();
-        initData();
         //TODO 需要添加检测SD卡是否可用
         if (ContextCompat.checkSelfPermission(WelcomeActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {//进行权限判断
@@ -306,4 +298,5 @@ public class WelcomeActivity extends Activity {
             }
         });
     }
+
 }

@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/fragment_home_title_bar_height"
+        android:layout_height="50dp"
         android:background="@color/mainColor"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -19,27 +19,27 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/fragment_home_title_bar_im_leftpadding"
+            android:layout_marginLeft="50dp"
             android:background="@drawable/location_title_icon"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="0dp"
+            android:background="@drawable/location_title_go_icon"/>
 
         <whcs.wohui.zz.myview.MyAlwaysRunTextView
             android:id="@+id/userLocationAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/fragment_home_title_bar_tv_margin"
+            android:layout_marginLeft="0dp"
             android:layout_marginRight="@dimen/fragment_home_title_bar_tv_margin"
             android:layout_weight="1"
             android:ellipsize="marquee"
             android:marqueeRepeatLimit="marquee_forever"
             android:singleLine="true"
             android:textColor="@color/white"
-            android:textSize="18sp"/>
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="@dimen/fragment_home_title_bar_margin_right"
-            android:background="@drawable/location_title_go_icon"/>
+            android:textSize="16sp"/>
 
         <ImageButton
             android:id="@+id/actionToMap"
@@ -63,9 +63,9 @@
             android:layout_height="match_parent"
             android:cacheColorHint="#00000000"
             android:divider="@color/mainBGColor"
-            android:dividerHeight="4dp"
-            android:fadingEdge="none"
+            android:dividerHeight="2dp"
             android:fastScrollEnabled="false"
+            android:fadingEdge="none"
             android:footerDividersEnabled="false"
             android:headerDividersEnabled="false"
             android:smoothScrollbar="true"

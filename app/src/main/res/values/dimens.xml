@@ -4,7 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="tab_top_fontsize">15sp</dimen>
     <dimen name="xiaomi_wide">10dp</dimen>
-    <dimen name="fragment_usercenter_login_margin_left">20dp</dimen><!--用户是否登录模块左侧外边距-->
+    <dimen name="fragment_usercenter_login_margin_left">30dp</dimen><!--用户是否登录模块左侧外边距-->
     <dimen name="fragment_usercenter_login_iv_margin_right">20dp</dimen><!--进入图片，右侧外边距-->
     <dimen name="fragment_usercenter_login_tv_margin_lift">18dp</dimen><!--登录字样与左面图片的距离-->
     <dimen name="fragment_usercenter_item_icon_margin_left">10dp</dimen><!--条目的图标左侧外边距-->
@@ -45,7 +45,7 @@
     <dimen name="fragment_shopstore_tv_mt_notify">10dp</dimen>
 
 
-    <dimen name="Banner_height">110dp</dimen>
+    <dimen name="Banner_height">140dp</dimen>
 
 
     <dimen name="no_data_padding">80dp</dimen>

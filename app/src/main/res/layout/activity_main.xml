@@ -14,10 +14,10 @@
         android:layout_weight="1"
         />
 
-    <TextView
+    <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:textColor="@color/homeTabHostTitleLine"/>
+        android:background="@color/homeTabHostTitleLine"/>
     <whcs.wohui.zz.myview.MyFragmentTabHost
         android:id="@+id/tabHost"
         android:background="@color/homeTabHostBg"

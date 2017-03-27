@@ -6,9 +6,9 @@
     <dimen name="xiaomi_wide">80dp</dimen>
     <dimen name="fragment_home_title_bar_height">55dp</dimen><!--首页标题栏高度-->
     <dimen name="fragment_home_title_bar_padding">10dp</dimen><!--首页标题栏内边距-->
-    <dimen name="fragment_home_title_bar_im_leftpadding">30dp</dimen><!--定位图片左侧外边距-->
-    <dimen name="fragment_home_title_bar_tv_margin">5dp</dimen><!--轮播文字左右外边距-->
-    <dimen name="fragment_home_title_bar_margin_right">10dp</dimen><!--首页标题栏内容右侧外边距-->
+    <dimen name="fragment_home_title_bar_im_leftpadding">50dp</dimen><!--定位图片左侧外边距-->
+    <dimen name="fragment_home_title_bar_tv_margin">0dp</dimen><!--轮播文字左右外边距-->
+    <dimen name="fragment_home_title_bar_margin_right">0dp</dimen><!--首页标题栏内容右侧外边距-->
     <dimen name="title_all_padding_bottom_top">14dp</dimen><!--总标题栏底上部部内边距-->
     <dimen name="title_all_padding_right">8dp</dimen><!--总标题栏顶部内边距-->
     <dimen name="title_all_back_padding_left">20dp</dimen><!--总标题栏返回按键左侧内边距-->
@@ -17,7 +17,7 @@
     <dimen name="title_all_sousuo_padding_right">5dp</dimen><!--总标题栏“搜索”右侧内边距-->
     <dimen name="RatingBar_minHeight">12dp</dimen><!--五星评论的最小高度-->
     <dimen name="RatingBar_maxHeight">13dp</dimen><!--五星评论的最大宽度-->
-    <dimen name="Banner_height">120dp</dimen>
+    <dimen name="Banner_height">150dp</dimen>
     <dimen name="no_data_padding">100dp</dimen>
 
 

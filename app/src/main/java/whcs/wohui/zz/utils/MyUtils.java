@@ -146,6 +146,27 @@ public class MyUtils {
         }
         return Integer.parseInt(String.valueOf(dif));
     }
+
+    /**
+     * 转换时间格式
+     * @param strTime
+     * @return
+     */
+    public static String switchTimeFormat(String strTime){
+        SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        Date date;
+        try {
+            date = sdf1.parse(strTime);
+            return sdf2.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return strTime;
+        }
+
+
+
+    }
     /**
      * 提供精确的乘法运算。
      * @param v1 被乘数

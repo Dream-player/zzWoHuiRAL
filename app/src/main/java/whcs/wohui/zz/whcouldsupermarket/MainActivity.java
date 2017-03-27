@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.baidu.mapapi.model.LatLng;
 
 import whcs.wohui.zz.activity.BaseActivity;
+import whcs.wohui.zz.fragment.FirstFragment;
 import whcs.wohui.zz.fragment.HomeFragment;
+import whcs.wohui.zz.fragment.ShopCarFragment;
 import whcs.wohui.zz.myview.MyFragmentTabHost;
 import whcs.wohui.zz.fragment.OrderFragment;
 import whcs.wohui.zz.fragment.UserCenterFragment;
@@ -24,15 +26,20 @@ import whcs.wohui.zz.utils.MyKey;
 
 public class MainActivity extends BaseActivity {
 
-    private String texts[] = {"首页", "订单", "我的"};
-    private Class fragmentArray[] = {HomeFragment.class,
+    private String texts[] = {"首页","附近","购物车", "订单", "我的"};
+    private Class fragmentArray[] = {FirstFragment.class,
+            HomeFragment.class,
+            ShopCarFragment.class,
             OrderFragment.class,
             UserCenterFragment.class};
-    private int imageBG[] = {R.drawable.tab_content_image_selector1,
+    private long fastTime = 0;
+
+    private int imageBG[] = {
+            R.drawable.tab_content_image_selector1,
+            R.drawable.tab_content_image_selector4,
+            R.drawable.tab_content_image_selector5,
             R.drawable.tab_content_image_selector2,
             R.drawable.tab_content_image_selector3};
-
-    private long fastTime = 0;
     private long secondTime;
 
     private FrameLayout mainContent;

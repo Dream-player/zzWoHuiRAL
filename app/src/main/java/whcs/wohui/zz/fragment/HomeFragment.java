@@ -452,8 +452,13 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     // 创建一个list存放imageURl
                     List<String> imageList = new ArrayList<>();
                     for (AdListBean.DataEntity dataEntity : adListData.getData()) {
-                        imageList.add(dataEntity.getAD_ImgUrl());
+//                        imageList.add(dataEntity.getAD_ImgUrl());
                     }
+                    imageList.add("http://img10.360buyimg.com/cms/jfs/t3163/17/1319630042/109911/4d61d2e0/57c94d2cN0928fc96.jpg");
+                    imageList.add("http://img11.360buyimg.com/cms/jfs/t3304/208/1257512630/85008/8158e0f/57c94d41Nb1910bf7.jpg");
+                    imageList.add("http://img11.360buyimg.com/cms/jfs/t3019/227/1696083172/101137/8f0d5551/57c94d5cN315fd854.jpg");
+                    imageList.add("http://img10.360buyimg.com/cms/jfs/t3301/335/1291165781/347071/c6d47d5c/57c94d72N0080bb9a.jpg");
+
                     initListHead(imageList);
                     break;
             }
@@ -509,6 +514,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 
             if (location1 != null && (location1.getLocType() == 161 || location1.getLocType() == 66)) {
                 location = location1;
+
                 EventBus.getDefault().post(location);
                 Toast.makeText(ctx, "定位成功", Toast.LENGTH_SHORT).show();
             } else {

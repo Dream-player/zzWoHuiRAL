@@ -16,6 +16,6 @@
     <dimen name="title_all_sousuo_padding_right">4.4dp</dimen><!--总标题栏“搜索”右侧内边距-->
     <dimen name="RatingBar_minHeight">10.6dp</dimen><!--五星评论的最小高度-->
     <dimen name="RatingBar_maxHeight">11.5dp</dimen><!--五星评论的最大宽度-->
-    <dimen name="Banner_height">110dp</dimen>
+    <dimen name="Banner_height">150dp</dimen>
     <dimen name="no_data_padding">86dp</dimen>
 </resources>

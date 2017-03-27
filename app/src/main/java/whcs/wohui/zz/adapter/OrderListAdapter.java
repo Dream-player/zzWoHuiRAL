@@ -47,7 +47,7 @@ public class OrderListAdapter extends MyBaseAdapter<OrderDetailData> implements 
         OrderDetailData orderRowEntity = dataList.get(position);
         orderState = orderRowEntity.getO_Status();
         int commentState = orderRowEntity.getO_CommentStatus();
-        vh.tvTime.setText(orderRowEntity.getO_ArrivaTime());
+        vh.tvTime.setText(MyUtils.switchTimeFormat(orderRowEntity.getO_ArrivaTime()));
         vh.tvGoodsNum.setText(orderRowEntity.getDetail().size() + "");
         vh.tvFactMoney.setText("¥" + orderRowEntity.getO_TotalPrice());
         vh.tvOrderIntegral.setText(orderRowEntity.getO_TotalXFJJ()+"");
