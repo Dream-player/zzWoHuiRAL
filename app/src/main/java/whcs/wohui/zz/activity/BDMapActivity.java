@@ -4,13 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
-
 
 import com.baidu.location.BDLocation;
 import com.baidu.location.BDLocationListener;
@@ -29,7 +27,6 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationData;
 import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
-import com.tencent.wxop.stat.StatServiceImpl;
 
 import java.util.List;
 
@@ -77,12 +74,13 @@ public class BDMapActivity extends BaseActivity implements View.OnClickListener 
     public void myOnCreate(Bundle savedInstanceState) {
         myOkHttpUtils = new MyOkHttpUtils();
         params = new MyRequestParams();
+//        locService = ((MyApplication) getApplication()).locationService;
         setContentView(R.layout.activity_bdmap);
         assignViews();
         mMapView.showScaleControl(false);
         mMapView.showZoomControls(false);
         mBaiduMap = mMapView.getMap();//得到地图实体类
-        doLocation();
+//        doLocation();
         mBaiduMap.setOnMapTouchListener(new BaiduMap.OnMapTouchListener() {
             @Override
             public void onTouch(MotionEvent motionEvent) {
@@ -299,6 +297,8 @@ public class BDMapActivity extends BaseActivity implements View.OnClickListener 
                     .extraInfo(bundle);
             //在地图上添加Marker，并显示
             mBaiduMap.addOverlay(option);
+            locService.unregisterListener(listener);
+            locService.stop();
         }
     }
     /**
@@ -397,8 +397,8 @@ public class BDMapActivity extends BaseActivity implements View.OnClickListener 
     protected void onDestroy() {
         super.onDestroy();
         //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理
-        locService.unregisterListener(listener);
-        locService.stop();
+//        locService.unregisterListener(listener);
+//        locService.stop();
         mMapView.onDestroy();
     }
 

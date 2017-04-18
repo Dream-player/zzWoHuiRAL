@@ -15,7 +15,8 @@
     <color name="white">#FFFFFF</color>
     <color name="white_2">#f1f1f1</color>
     <color name="goodsCategoryListBG">#F2F2F2</color>
-    <color name="homeFragmentRefreshColor">#FF8A17</color>
+    <color name="white_6">#F6F6F6</color>
+    <color name="homeFragmentRefreshColor">#3191E8</color>
     <color name="MyProgressDialog_default_color">#b1000000</color>
     <color name="kprogresshud_grey_color">#449E9E9E</color>
     <color name="userCenterMenuColor">#3e3e3e</color>
@@ -25,6 +26,7 @@
     <color name="color_333">#333333</color>
     <color name="color_999">#999999</color>
     <color name="color_666">#666666</color>
+    <color name="color_000">#000000</color>
     <color name="color_d2">#D2D2D2</color>
     <color name="color_red">#FE0000</color>
     <color name="color_red_2">#a5FE0000</color>

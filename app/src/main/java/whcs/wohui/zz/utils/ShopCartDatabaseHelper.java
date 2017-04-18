@@ -16,9 +16,9 @@ import whcs.wohui.zz.Bean.GoodsListBean.DataEntity.GoodsEntity;
 
 /**
  * 说明：操纵购物车数据库工具类
- * 作者：陈杰宇
- * 时间： 2016/4/14 17:37
- * 版本：V1.0
+ * 作者：刘志海
+ * 时间： 2017/4/8 9:37
+ * 版本：
  * 修改历史：
  */
 public class ShopCartDatabaseHelper {

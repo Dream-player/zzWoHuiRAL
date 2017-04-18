@@ -12,6 +12,7 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baidu.location.BDLocation;
 import com.baidu.mapapi.model.LatLng;
 
 import whcs.wohui.zz.activity.BaseActivity;
@@ -25,6 +26,16 @@ import whcs.wohui.zz.utils.LogUtils;
 import whcs.wohui.zz.utils.MyKey;
 
 public class MainActivity extends BaseActivity {
+
+    private BDLocation location;
+
+    public BDLocation getmLocation() {
+        return location;
+    }
+
+    public void setmLocation(BDLocation location) {
+        this.location = location;
+    }
 
     private String texts[] = {"首页","附近","购物车", "订单", "我的"};
     private Class fragmentArray[] = {FirstFragment.class,

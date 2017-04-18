@@ -8,7 +8,7 @@
         android:id="@+id/convenientBanner"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="130dp"
         app:canLoop="true"
         />
 
@@ -36,5 +36,46 @@
             android:textColor="@color/color_666"
             android:textSize="18sp"/>
     </LinearLayout>
+
+    <View
+        android:layout_marginTop="10dp"
+        android:background="@color/white_6"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <View
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"
+            android:background="#858585"
+            android:layout_width="30dp"
+            android:layout_height="1dp"/>
+        <TextView
+            android:textSize="16dp"
+            android:layout_gravity="center"
+            android:text="附近超市"
+            android:textColor="@color/color_000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:background="#858585"
+            android:layout_width="30dp"
+            android:layout_height="1dp"/>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:background="@color/white_6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+
 
 </LinearLayout>

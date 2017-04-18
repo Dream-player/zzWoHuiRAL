@@ -19,8 +19,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
-import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.search.core.CityInfo;
 import com.baidu.mapapi.search.core.PoiInfo;
 import com.baidu.mapapi.search.core.SearchResult;
@@ -257,8 +255,13 @@ public class SearchLocationActivity extends BaseActivity implements View.OnClick
                 doSearchPoi(address);
                 break;
             case R.id.llLocation:
-                doLocation();
+//                doLocation();
+                setResult(LOCATION_CORRENT);
+                SearchLocationActivity.this.finish();
+                Toast.makeText(ctx, "定位成功", Toast.LENGTH_SHORT).show();
+
                 break;
+
             case R.id.titleGoBack:
                 onBackPressed();
                 break;
@@ -286,38 +289,38 @@ public class SearchLocationActivity extends BaseActivity implements View.OnClick
     /***
      * 定位结果回调，在此方法中处理定位结果
      */
-    BDLocationListener listener = new BDLocationListener() {
-
-        @Override
-        public void onReceiveLocation(BDLocation location1) {
-
-            if (location1 != null && (location1.getLocType() == 161 || location1.getLocType() == 66)) {
-                location = location1;
-                Toast.makeText(ctx, "定位成功", Toast.LENGTH_SHORT).show();
-                intent.putExtra("location", location1);
-                setResult(LOCATION_CORRENT, intent);
-                dismissDialog();
-                SearchLocationActivity.this.finish();
-            } else {
-                Toast.makeText(ctx, "定位失败", Toast.LENGTH_SHORT).show();
-                dismissDialog();
-            }
-        }
-    };
+//    BDLocationListener listener = new BDLocationListener() {
+//
+//        @Override
+//        public void onReceiveLocation(BDLocation location1) {
+//
+//            if (location1 != null && (location1.getLocType() == 161 || location1.getLocType() == 66)) {
+//                location = location1;
+//                Toast.makeText(ctx, "定位成功", Toast.LENGTH_SHORT).show();
+//                intent.putExtra("location", location1);
+//                setResult(LOCATION_CORRENT, intent);
+//                dismissDialog();
+//                SearchLocationActivity.this.finish();
+//            } else {
+//                Toast.makeText(ctx, "定位失败", Toast.LENGTH_SHORT).show();
+//                dismissDialog();
+//            }
+//        }
+//    };
     /**
      * 进行定位
      */
-    private void doLocation() {
-        showDialog(ctx);
-        LogUtils.outLog("doLocation()");
-        locService = getMyApplication().locationService;
-        LocationClientOption mOption = locService.getDefaultLocationClientOption();
-        mOption.setLocationMode(LocationClientOption.LocationMode.Battery_Saving);
-        mOption.setCoorType("bd09ll");
-        locService.setLocationOption(mOption);
-        locService.registerListener(listener);
-        locService.start();
-    }
+//    private void doLocation() {
+//        showDialog(ctx);
+//        LogUtils.outLog("doLocation()");
+//        locService = getMyApplication().locationService;
+//        LocationClientOption mOption = locService.getDefaultLocationClientOption();
+//        mOption.setLocationMode(LocationClientOption.LocationMode.Battery_Saving);
+//        mOption.setCoorType("bd09ll");
+//        locService.setLocationOption(mOption);
+//        locService.registerListener(listener);
+//        locService.start();
+//    }
     /**
      * 搜索出的列表适配器
      */

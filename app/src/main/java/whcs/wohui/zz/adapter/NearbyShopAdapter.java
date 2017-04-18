@@ -96,7 +96,7 @@ public class NearbyShopAdapter extends MyBaseAdapter<NearbyShopBean.DataEntity> 
             tv.setText("营业中");
             tv.setTextColor(ctx.getResources().getColor(R.color.color_red));
         }else {
-            tv.setText("已关门");
+            tv.setText("停止营业");
             tv.setTextColor(ctx.getResources().getColor(R.color.userCenterMenuColor));
         }
     }

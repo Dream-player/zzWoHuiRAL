@@ -1,14 +1,10 @@
 package whcs.wohui.zz.fragment;
 
 
-import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.NonNull;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -21,8 +17,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.baidu.location.BDLocation;
-import com.baidu.location.BDLocationListener;
-import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.model.LatLng;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.adapter.CBPageAdapter;
@@ -33,7 +27,6 @@ import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import de.greenrobot.event.EventBus;
 import okhttp3.Call;
 import whcs.wohui.zz.Bean.AdListBean;
 import whcs.wohui.zz.Bean.NearbyShopBean;
@@ -54,7 +47,6 @@ import whcs.wohui.zz.utils.MyKey;
 import whcs.wohui.zz.utils.MyOkHttpUtils;
 import whcs.wohui.zz.utils.MyRequestParams;
 import whcs.wohui.zz.whcouldsupermarket.MainActivity;
-import whcs.wohui.zz.whcouldsupermarket.MyApplication;
 import whcs.wohui.zz.whcouldsupermarket.R;
 
 /**
@@ -82,6 +74,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         mainPullList = (PullToRefreshListView) v.findViewById(R.id.mainPullList);
         userLocationAdd = (MyAlwaysRunTextView) v.findViewById(R.id.userLocationAdd);
         listView = mainPullList.getRefreshableView();
+
 
     }
 
@@ -111,19 +104,20 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     private static final int NS_CALLBACK_DEFEAT = 10004;//附近商家请求失败
     public static final int ACTIVITY_LOCATION = 1;//定位页面返回来
 
+    private BDLocation ac;
 
     @Override
     public View initView() {
         ctx = HomeFragment.this.getContext();
         activity = (MainActivity) getActivity();
         View v = View.inflate(ctx, R.layout.home_fragment, null);
+//        EventBus.getDefault().register(this);
+        myOkHttpUtils = new MyOkHttpUtils(ctx);
         assignViews(v);
         addListHead();
         initThisData();
         initListener();
-        myOkHttpUtils = new MyOkHttpUtils(ctx);
         params = new MyRequestParams();
-        EventBus.getDefault().register(this);
         imagesADRequest();
         return v;
     }
@@ -178,6 +172,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 //        myPullToRefreshListener = new MyPullToRefreshListener();
 //        mainPullList.setOnRefreshListener(myPullToRefreshListener);
         swipeRefLayout.setOnRefreshListener(this);
+
+        ac = ((MainActivity)getActivity()).getmLocation();
+        Toast.makeText(ctx, "经度"+ac.getLatitude(), Toast.LENGTH_SHORT).show();
+
+        getNearbyShop1(ac);
 //        userLocationAdd.setOnClickListener(this);
 
 //        if (activity.application.getCity() != null && !activity.application.getCity().equals("")) {
@@ -190,26 +189,28 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
 //        } else {
 //
 //        }
-        if (ContextCompat.checkSelfPermission(ctx, Manifest.permission.ACCESS_COARSE_LOCATION)
-                != PackageManager.PERMISSION_GRANTED) {//进行权限判断
-            requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
-                    33);
-        }else {
-            doLocation();
-        }
+//        if (ContextCompat.checkSelfPermission(ctx, Manifest.permission.ACCESS_COARSE_LOCATION)
+//                != PackageManager.PERMISSION_GRANTED) {//进行权限判断
+//            requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+//                    33);
+//        }else {
+//            doLocation();
+//        }
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 
-        if (requestCode == 33) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                doLocation();
-            } else {
-                showToast(ctx,"请设置允许定位权限!");
-            }
-        }
-    }
+
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//
+//        if (requestCode == 33) {
+//            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                doLocation();
+//            } else {
+//                showToast(ctx,"请设置允许定位权限!");
+//            }
+//        }
+//    }
     /**
      * 需要每次切换都进行初始化的在此方法中进行
      */
@@ -250,7 +251,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         View v = LayoutInflater.from(ctx).inflate(R.layout.home_list_head, listView, false);
         convenientBanner = (ConvenientBanner) v.findViewById(R.id.convenientBanner);
 
-        rlNoData = (LinearLayout) v.findViewById(R.id.rl_no_data);
+//        rlNoData = (LinearLayout) v.findViewById(R.id.rl_no_data);
         listView.addHeaderView(v);
     }
 
@@ -285,17 +286,17 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     /**
      * 进行定位
      */
-    private void doLocation() {
-        showDialog(ctx);
-        LogUtils.outLog("doLocation()");
-        locService = ((MyApplication) activity.getApplication()).locationService;
-        LocationClientOption mOption = locService.getDefaultLocationClientOption();
-        mOption.setLocationMode(LocationClientOption.LocationMode.Battery_Saving);
-        mOption.setCoorType("bd09ll");
-        locService.setLocationOption(mOption);
-        locService.registerListener(listener);
-        locService.start();
-    }
+//    private void doLocation() {
+//        showDialog(ctx);
+//        LogUtils.outLog("doLocation()");
+//        locService = ((MyApplication) activity.getApplication()).locationService;
+//        LocationClientOption mOption = locService.getDefaultLocationClientOption();
+//        mOption.setLocationMode(LocationClientOption.LocationMode.Battery_Saving);
+//        mOption.setCoorType("bd09ll");
+//        locService.setLocationOption(mOption);
+//        locService.registerListener(listener);
+//        locService.start();
+//    }
 
     /**
      * 跳转到OkHttpTestActivity
@@ -328,6 +329,26 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
             activity.application.setCity(location.getCity());
             getNearbyShop(latitude, longitude);
         }
+
+    }
+    /**
+     * 从首页拿到的经纬度进行超市获取
+     *
+     */
+    public void getNearbyShop1(BDLocation location) {
+
+            String locationStr = location.getAddrStr();
+            LogUtils.e("TAG","locationStr:"+locationStr);
+            userLocationAdd.setText(locationStr);
+
+            //获得经纬度进行附近商家列表请求
+            latitude = location.getLatitude();
+            longitude = location.getLongitude();
+            activity.application.setAddress(location.getAddrStr());
+            activity.application.setLatLng(new LatLng(latitude, longitude));
+            activity.application.setCity(location.getCity());
+            getNearbyShop(latitude, longitude);
+
 
     }
 
@@ -435,10 +456,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     LogUtils.e("附近商家请求成功");
                     NearbyShopBean data = (NearbyShopBean) msg.obj;
                     if (data.getData().size() == 0) {
-                        rlNoData.setVisibility(View.VISIBLE);
+//                        rlNoData.setVisibility(View.VISIBLE);
                         Toast.makeText(ctx, "附近暂无商家", Toast.LENGTH_SHORT).show();
                     } else {
-                        rlNoData.setVisibility(View.GONE);
+//                        rlNoData.setVisibility(View.GONE);
                         Toast.makeText(ctx, "附近商家请求成功", Toast.LENGTH_SHORT).show();
 
                     }
@@ -466,25 +487,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         }
     };
 
-    @Override
-    protected void onPauseLazy() {
-        super.onPauseLazy();
-        if (locService != null) {
-            locService.unregisterListener(listener);
-            locService.stop();
-        }
-    }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        LogUtils.outLog("onDestroy");
-        EventBus.getDefault().unregister(this);
-        if (locService != null) {
-            locService.unregisterListener(listener);
-            locService.stop();
-        }
-    }
 
     /**
      * 自定义PullToRefresh的刷新监听类
@@ -506,23 +509,27 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
     /***
      * 定位结果回调，在此方法中处理定位结果
      */
-    BDLocationListener listener = new BDLocationListener() {
-
-        @Override
-        public void onReceiveLocation(BDLocation location1) {
-            LogUtils.e("定位类型：" + location1.getLocType());
-
-            if (location1 != null && (location1.getLocType() == 161 || location1.getLocType() == 66)) {
-                location = location1;
-
-                EventBus.getDefault().post(location);
-                Toast.makeText(ctx, "定位成功", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(ctx, "定位失败", Toast.LENGTH_SHORT).show();
-                dismissDialog();
-            }
-        }
-    };
+//    BDLocationListener listener = new BDLocationListener() {
+//
+//        @Override
+//        public void onReceiveLocation(BDLocation location1) {
+//            LogUtils.e("定位类型：" + location1.getLocType());
+//
+//            if (location1 != null && (location1.getLocType() == 161 || location1.getLocType() == 66)) {
+//                location = location1;
+//
+//                latitude = location.getLatitude();
+//                longitude = location.getLongitude();
+//                LogUtils.e("TAG","latitude和longitude是"+latitude+longitude);
+//
+//                EventBus.getDefault().post(location);
+//                Toast.makeText(ctx, "定位成功", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(ctx, "定位失败", Toast.LENGTH_SHORT).show();
+//                dismissDialog();
+//            }
+//        }
+//    };
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -540,8 +547,9 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
                     activity.application.setLatLng(new LatLng(latitude, longitude));
                     getNearbyShop(latitude, longitude);
                 } else if (resultCode == SearchLocationActivity.LOCATION_CORRENT) {
-                    EventBus.getDefault().post(location);
-                    LogUtils.e("TAG","定位成功接收");
+                    LogUtils.e("返回定位当前位置成功3");
+                    getNearbyShop1(ac);
+                    LogUtils.e("TAG","定位成功接收"+latitude);
 
                 } else if (resultCode == activity.RESULT_CANCELED) {
 
