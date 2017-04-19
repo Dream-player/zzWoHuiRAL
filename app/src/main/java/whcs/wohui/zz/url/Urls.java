@@ -76,4 +76,7 @@ public class Urls {
     //跟新接口
     public static final String UpdateApp = Base_Url + "UpdateApp";
 
+    public static final String NearSMCommList = Base_Url + "NearSMCommList";
+
+
 }
