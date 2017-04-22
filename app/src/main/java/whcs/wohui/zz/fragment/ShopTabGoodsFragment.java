@@ -1,7 +1,6 @@
 package whcs.wohui.zz.fragment;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
@@ -17,7 +16,6 @@ import whcs.wohui.zz.Bean.BCGoodsSortData;
 import whcs.wohui.zz.Bean.GoodsSortBean;
 import whcs.wohui.zz.Bean.GoodsSortData;
 import whcs.wohui.zz.activity.ShopActivity;
-import whcs.wohui.zz.activity.ShopGoodsActivity;
 import whcs.wohui.zz.adapter.GoodsACategoryListAdapter;
 import whcs.wohui.zz.adapter.GoodsBCategoryListAdapter;
 import whcs.wohui.zz.callback.GoodsSortCallBack;
@@ -250,14 +248,19 @@ public class ShopTabGoodsFragment extends BaseFragment {
             bListAdapter.setGoTOGoodsListListener(new GoodsBCategoryListAdapter.GoTOGoodsListListener() {
                 @Override
                 public void goToGoodsList(String numberCate) {
-                    Intent intent = new Intent(ctx, ShopGoodsActivity.class);
-                    intent.putExtra("numberCate",numberCate);
-                    intent.putExtra("shopSerialNo",shopSerialNumber);
-                    intent.putExtra("shopName",activity.getShopName());
-                    intent.putExtra("freight",activity.getShopDetail().getData().getS_Freight());
-                    intent.putExtra("minMoney",activity.getMinMoney());
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    ctx.startActivity(intent);
+                    activity.setnumberCate(numberCate);
+                    activity.setpageIndexnum(1);
+                    activity.getindicatorViewPager().setCurrentItem(0,true);
+                    activity.getmyIndicatorFragmentAdapter().notifyDataSetChanged();
+
+//                    Intent intent = new Intent(ctx, ShopGoodsActivity.class);
+//                    intent.putExtra("numberCate",numberCate);
+//                    intent.putExtra("shopSerialNo",shopSerialNumber);
+//                    intent.putExtra("shopName",activity.getShopName());
+//                    intent.putExtra("freight",activity.getShopDetail().getData().getS_Freight());
+//                    intent.putExtra("minMoney",activity.getMinMoney());
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                    ctx.startActivity(intent);
                 }
             });
             lvSecondCategory.setAdapter(bListAdapter);

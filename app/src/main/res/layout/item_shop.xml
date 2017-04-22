@@ -26,7 +26,7 @@
                 android:layout_weight="2"
                 android:singleLine="true"
                 android:text="我惠超市"
-                android:textColor="@color/color_333"
+                android:textColor="@color/color_666"
                 android:textSize="17sp"/>
             <TextView
                 android:id="@+id/tvIsOpen"

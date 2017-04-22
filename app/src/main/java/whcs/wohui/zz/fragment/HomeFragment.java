@@ -174,7 +174,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener, 
         swipeRefLayout.setOnRefreshListener(this);
 
         ac = ((MainActivity)getActivity()).getmLocation();
-        Toast.makeText(ctx, "经度"+ac.getLatitude(), Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ctx, "经度"+ac.getLatitude(), Toast.LENGTH_SHORT).show();
 
         getNearbyShop1(ac);
 //        userLocationAdd.setOnClickListener(this);

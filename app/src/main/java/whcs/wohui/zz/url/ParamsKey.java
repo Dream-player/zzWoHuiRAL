@@ -104,7 +104,7 @@ public class ParamsKey {
     public static final String GetGoods_pageIndex = "pageIndex";
     public static final String GetGoods_pageSize = "pageSize";
     public static final String GetGoods_goodsOrder = "typeOrder";
-    public static final String GetGoods_CateNo = "cateNo";
+    public static final String GetGoods_CateNo = "cateId";
     /**
      * 搜索商品
      */

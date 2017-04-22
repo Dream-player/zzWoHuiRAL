@@ -11,7 +11,6 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +25,7 @@ import okhttp3.Call;
 import whcs.wohui.zz.Bean.ShopDetailBean;
 import whcs.wohui.zz.callback.ShopDetailCallBack;
 import whcs.wohui.zz.fragment.BaseFragment;
+import whcs.wohui.zz.fragment.ShopGoodsFragment;
 import whcs.wohui.zz.fragment.ShopTabEvaluateFragment;
 import whcs.wohui.zz.fragment.ShopTabGoodsFragment;
 import whcs.wohui.zz.fragment.ShopTabStoreFragment;
@@ -37,6 +37,7 @@ import whcs.wohui.zz.utils.MyRequestParams;
 import whcs.wohui.zz.utils.ShopCartDatabaseHelper;
 import whcs.wohui.zz.whcouldsupermarket.R;
 
+import static android.support.v4.view.PagerAdapter.POSITION_NONE;
 
 
 /**
@@ -52,11 +53,18 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
     private TextView titleName;
     private Indicator indicator;
     private ViewPager viewPager;
-    private ImageView titleSearch;
+//    private ImageView titleSearch;
+    private RelativeLayout titleDoSearch;
+    private TextView titleAll;
     private String shopSerialNo;
+    private String numberCate="";
+    private int pageIndexnum = 1;//商品列表的当前页数
+    private int number=1;//控制加载全部商品
 
     private void assignViews() {
-        titleSearch = (ImageView) findViewById(R.id.ivTitleSearch);
+        titleDoSearch= (RelativeLayout) findViewById(R.id.titleDoSearch);
+        titleAll = (TextView) findViewById(R.id.titleAll);
+//        titleSearch = (ImageView) findViewById(R.id.ivTitleSearch);
         titleName = (TextView) findViewById(R.id.titleName);
         goBack = (RelativeLayout) findViewById(R.id.titleGoBack);
         indicator = (FixedIndicatorView) findViewById(R.id.indicator);
@@ -66,8 +74,9 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
     private Context ctx;
     private IndicatorViewPager indicatorViewPager;
     private LayoutInflater inflate;
-    private String[] shopTabName = {"商品", "评价", "商家"};
-    private BaseFragment[] shopTabFragment = {new ShopTabGoodsFragment(),
+    private String[] shopTabName = {"商品","分类", "评价", "商家"};
+    private BaseFragment[] shopTabFragment = {new ShopGoodsFragment(),
+            new ShopTabGoodsFragment(),
             new ShopTabEvaluateFragment(),
             new ShopTabStoreFragment()};
     private MyIndicatorFragmentAdapter myIndicatorFragmentAdapter;
@@ -164,20 +173,22 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
      * 给控件设置监听，添加适配器
      */
     private void initView(){
-        indicator.setScrollBar(new ColorBar(getApplicationContext(), 0xFFFF8A17, 5));
+        indicator.setScrollBar(new ColorBar(getApplicationContext(), getResources().getColor(R.color.mainColor), 5));
         indicator.setOnTransitionListener(new OnTransitionTextListener()
                 .setColor(getResources().getColor(R.color.mainColor),
                         getResources().getColor(R.color.color_666)));
         // 将viewPager和indicator使用
         indicatorViewPager = new IndicatorViewPager(indicator, viewPager);
-        indicatorViewPager.setPageOffscreenLimit(3);
+        indicatorViewPager.setPageOffscreenLimit(5);
         inflate = LayoutInflater.from(getApplicationContext());
         myIndicatorFragmentAdapter = new MyIndicatorFragmentAdapter(getSupportFragmentManager());
         // 设置indicatorViewPager的适配器
         indicatorViewPager.setAdapter(myIndicatorFragmentAdapter);
         titleName.setText(shopName);
-        titleSearch.setVisibility(View.VISIBLE);
-        titleSearch.setOnClickListener(this);
+        titleDoSearch.setVisibility(View.VISIBLE);
+        titleAll.setOnClickListener(this);
+//        titleSearch.setVisibility(View.VISIBLE);
+//        titleSearch.setOnClickListener(this);
         goBack.setOnClickListener(this);
     }
 
@@ -189,7 +200,7 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
 
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         @Override
@@ -209,6 +220,14 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
 
             return fragment;
         }
+
+        @Override
+        public int getItemPosition(Object object) {
+            if (object instanceof ShopGoodsFragment) {
+                return POSITION_NONE;
+            }
+            return super.getItemPosition(object);
+        }
     }
 
 
@@ -219,7 +238,21 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
                 ShopActivity.this.onBackPressed();
                 break;
             case R.id.ivTitleSearch:
-                searchGoods();
+//                searchGoods();
+                setnumber(1);
+                indicatorViewPager.setCurrentItem(0,true);
+                myIndicatorFragmentAdapter.notifyDataSetChanged();
+//                activity.getindicatorViewPager().setCurrentItem(0,true);
+//                activity.getmyIndicatorFragmentAdapter().notifyDataSetChanged();
+                break;
+
+            case R.id.titleAll:
+//                searchGoods();
+                setnumber(1);
+                indicatorViewPager.setCurrentItem(0,true);
+                myIndicatorFragmentAdapter.notifyDataSetChanged();
+//                activity.getindicatorViewPager().setCurrentItem(0,true);
+//                activity.getmyIndicatorFragmentAdapter().notifyDataSetChanged();
                 break;
         }
     }
@@ -242,6 +275,37 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
     }
     public ShopDetailBean getShopDetail() {
         return shopDetail;
+    }
+
+    public IndicatorViewPager getindicatorViewPager() {
+        return indicatorViewPager;
+    }
+
+    public IndicatorViewPager.IndicatorFragmentPagerAdapter getmyIndicatorFragmentAdapter() {
+        return myIndicatorFragmentAdapter;
+    }
+
+    public void setnumberCate(String numberCate) {
+        this.numberCate = numberCate;
+    }
+
+    public String getnumberCate() {
+        return numberCate;
+    }
+
+    public void setpageIndexnum(int pageIndexnum) {
+        this.pageIndexnum = pageIndexnum;
+    }
+
+    public int getpageIndexnum() {
+        return pageIndexnum;
+    }
+    public void setnumber(int number) {
+        this.number = number;
+    }
+
+    public int getnumber() {
+        return number;
     }
 
 }

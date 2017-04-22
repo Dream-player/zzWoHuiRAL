@@ -46,8 +46,8 @@ import whcs.wohui.zz.whcouldsupermarket.R;
 
 /**
  * 说明：
- * 作者：朱世元
- * 时间： 2016/9/13 11:57
+ * 作者：刘志海
+ * 时间： 2017/4/23 11:57
  * 版本：V1.0
  * 修改历史：
  */
@@ -85,6 +85,7 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
     private MyRequestParams params;
     private int pageIndex = 1;//商品列表的当前页数
     private static final int GET_GL_SUCCESS = 1100;//得到商品成功
+    private static final int GET_GL_SUCCESSNUM = 1110;//得到商品成功
     private static final int GET_GL_DEFEAT = 1101;//得到商品失败
     private static final int ConfirmCart_SUCCESS = 7785;//确认购物车成功
     private GoodsListAdapter goodsListAdapter;
@@ -99,7 +100,10 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
         assignViews(v);
         initData();
         initListener();
-        getGoods(shopSerialNo, pageIndex);
+//        if (activity.getnumber()==1){
+//        getGoods(shopSerialNo, pageIndex,activity.getnumberCate());
+//        }
+//        Toast.makeText(ctx, "你们好", Toast.LENGTH_SHORT).show();
         return  v;
     }
     private void initData(){
@@ -143,7 +147,11 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
         lvGoods.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
             @Override
             public void onRefresh(PullToRefreshBase<ListView> refreshView) {
-                getGoods(shopSerialNo, pageIndex);
+                if (activity.getnumber()==2) {
+                    getGoods(shopSerialNo, pageIndex, activity.getnumberCate());
+                }else {
+                    getGoodsnumber(shopSerialNo, activity.getpageIndexnum(), activity.getnumberCate());
+                }
             }
         });
     }
@@ -171,19 +179,30 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
     @Override
     public void initEachData() {
         LogUtils.e("initEachData()");
+        Toast.makeText(ctx, "你好剑圣", Toast.LENGTH_SHORT).show();
+        activity.setnumber(activity.getnumber()+1);
+        if (activity.getnumber()>2) {
+            getGoodsnumber(shopSerialNo, activity.getpageIndexnum(), activity.getnumberCate());
+        }else if (activity.getnumber()==2){
+            pageIndex=1;
+            activity.setnumberCate("");
+            getGoods(shopSerialNo, pageIndex, activity.getnumberCate());
+        }
 
     }
     /**
      * 网络请求获取商品
      */
-    private void getGoods(String shopSerialNo, int pageIndex) {
+    private void getGoods(String shopSerialNo, int pageIndex,String numberCate) {
         showDialog(ctx);
         params.clear();
+        params.addStringRequest(ParamsKey.GetGoods_CateNo, numberCate);
         params.addStringRequest(ParamsKey.userKey, activity.getMyApplication().getUserKey());
         params.addStringRequest(ParamsKey.GetGoods_goodsOrder, "1");
         params.addStringRequest(ParamsKey.GetGoods_shopSerialNo, shopSerialNo);
         params.addStringRequest(ParamsKey.GetGoods_pageIndex, "" + pageIndex);
         params.addStringRequest(ParamsKey.GetGoods_pageSize, "10");
+
         String strUrl = Urls.GetGoodsList;
         myOkHttpUtils.postRequest(strUrl, params, new GoodsListCallBack() {
             @Override
@@ -200,6 +219,41 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
                     Message msg = new Message();
                     msg.obj = response;
                     msg.what = GET_GL_SUCCESS;
+                    handler.sendMessage(msg);
+                } else {
+
+                }
+
+            }
+        });
+    }
+
+    private void getGoodsnumber(String shopSerialNo, int pageIndexnum,String numberCate) {
+        showDialog(ctx);
+        params.clear();
+        params.addStringRequest(ParamsKey.GetGoods_CateNo, numberCate);
+        params.addStringRequest(ParamsKey.userKey, activity.getMyApplication().getUserKey());
+        params.addStringRequest(ParamsKey.GetGoods_goodsOrder, "1");
+        params.addStringRequest(ParamsKey.GetGoods_shopSerialNo, shopSerialNo);
+        params.addStringRequest(ParamsKey.GetGoods_pageIndex, "" + pageIndexnum);
+        params.addStringRequest(ParamsKey.GetGoods_pageSize, "10");
+
+        String strUrl = Urls.GetGoodsList;
+        myOkHttpUtils.postRequest(strUrl, params, new GoodsListCallBack() {
+            @Override
+            public void onError(Call call, Exception e) {
+                LogUtils.e("商品请求错误信息:" + e.toString());
+                handler.sendEmptyMessage(GET_GL_DEFEAT);
+
+
+            }
+
+            @Override
+            public void onResponse(GoodsListBean response) {
+                if (response.getState() == 1) {
+                    Message msg = new Message();
+                    msg.obj = response;
+                    msg.what = GET_GL_SUCCESSNUM;
                     handler.sendMessage(msg);
                 } else {
 
@@ -235,6 +289,26 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
                     goodsNumList.addAll(myDBHelper.getGoodsOrderCount(goodsList));
                     goodsListAdapter.notifyDataSetChanged();
                     pageIndex++;
+
+                    break;
+                case GET_GL_SUCCESSNUM:
+                    lvGoods.onRefreshComplete();
+                    dismissDialog();
+                    GoodsListBean data1 = (GoodsListBean) msg.obj;//获取网络请求商品列表
+                    if (data1.getData().getData().size()==0){
+                        showToast(ctx,"暂无更多商品!");
+                        return;
+                    }
+                    if (activity.getpageIndexnum() == 1) {
+                        goodsList.clear();
+                        goodsNumList.clear();
+                    }
+                    goodsList.addAll(data1.getData().getData());
+                    LogUtils.e("当前展示上平数量:"+goodsList.size());
+                    //得到购物车中每件商品订购的数量
+                    goodsNumList.addAll(myDBHelper.getGoodsOrderCount(goodsList));
+                    goodsListAdapter.notifyDataSetChanged();
+                    activity.setpageIndexnum(activity.getpageIndexnum()+1);
 
                     break;
                 case ConfirmCart_SUCCESS:

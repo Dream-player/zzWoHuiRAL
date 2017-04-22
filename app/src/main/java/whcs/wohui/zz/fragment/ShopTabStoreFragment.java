@@ -73,12 +73,14 @@ public class ShopTabStoreFragment extends BaseFragment {
         v = View.inflate(ctx, R.layout.shop_tab_fragment_store, null);
         assignViews();
 
+
         numberSM = activity.getShopSerialNo();
         shopDetail = activity.getShopDetail();
         setCollectState(myDBHelper.isCollect(numberSM));//设置界面收藏状态
         ivCollect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 LogUtils.e("tvCollect+++++++");
                 if (!myDBHelper.isCollect(numberSM)) {
                     myDBHelper.shopCollectAdd(shopDetail.getData());

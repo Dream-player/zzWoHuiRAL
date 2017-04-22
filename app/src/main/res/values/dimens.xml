@@ -23,7 +23,7 @@
     <dimen name="activity_shop_indicator_height">45dp</dimen><!--超市页面指示器高度-->
     <dimen name="item_order_goods_iv_height_width">60dp</dimen><!--订单列表中商品图片的大小-->
     <dimen name="item_order_goods_tv_margin_top">5dp</dimen><!--订单列表中商品名称和图片的距离-->  `
-    <dimen name="item_goods_category_a_tv_margin_top_bottom">15dp</dimen><!--超市商品模块a列表字体上下外边距-->
+    <dimen name="item_goods_category_a_tv_margin_top_bottom">20dp</dimen><!--超市商品模块a列表字体上下外边距-->
     <dimen name="item_goods_category_a_tv_margin_right">20dp</dimen><!--超市商品模块a列表字体右侧外边距-->
     <dimen name="item_goods_category_b_gv_padding">15dp</dimen><!--超市商品模块b列表中grid view 内边距-->
     <dimen name="item_goods_category_c_tv_padding">10dp</dimen><!--超市商品模块c列表中字体内边距-->

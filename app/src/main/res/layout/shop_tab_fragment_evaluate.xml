@@ -13,7 +13,6 @@
         android:divider="@color/mainBGColor"
         android:dividerHeight="1dp"
         android:fadingEdge="none"
-        android:layout_marginTop="6dp"
         android:fastScrollEnabled="false"
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false"

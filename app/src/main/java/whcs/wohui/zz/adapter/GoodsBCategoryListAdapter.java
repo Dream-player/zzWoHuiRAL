@@ -51,7 +51,7 @@ public class GoodsBCategoryListAdapter extends MyBaseAdapter<BCGoodsSortData> {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int bPosition, long id) {
                 String numberCate = dataList.get(position).getCGoodsSortList().get(bPosition).getCC_GUID();
-                LogUtils.outLog(numberCate);
+                LogUtils.e(numberCate);
                 if (goTOGoodsListListener!=null){
                     goTOGoodsListListener.goToGoodsList(numberCate);
                 }

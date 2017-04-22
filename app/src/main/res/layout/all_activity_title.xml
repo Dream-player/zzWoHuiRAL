@@ -42,7 +42,7 @@
             android:ellipsize="marquee"
             android:text="标题"
             android:textColor="@color/white"
-            android:textSize="20sp"/>
+            android:textSize="17sp"/>
 
         <EditText
             android:id="@+id/titleEdit"
@@ -74,11 +74,13 @@
             android:visibility="gone">
 
             <TextView
+                android:id="@+id/titleAll"
+                android:clickable="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="搜索"
+                android:text="全部商品"
                 android:textColor="@color/white"
-                android:textSize="17sp"/>
+                android:textSize="14sp"/>
         </RelativeLayout>
 
         <ImageView

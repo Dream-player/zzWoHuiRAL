@@ -18,10 +18,9 @@ import com.baidu.mapapi.model.LatLng;
 import whcs.wohui.zz.activity.BaseActivity;
 import whcs.wohui.zz.fragment.FirstFragment;
 import whcs.wohui.zz.fragment.HomeFragment;
-import whcs.wohui.zz.fragment.ShopCarFragment;
-import whcs.wohui.zz.myview.MyFragmentTabHost;
 import whcs.wohui.zz.fragment.OrderFragment;
 import whcs.wohui.zz.fragment.UserCenterFragment;
+import whcs.wohui.zz.myview.MyFragmentTabHost;
 import whcs.wohui.zz.utils.LogUtils;
 import whcs.wohui.zz.utils.MyKey;
 
@@ -37,10 +36,10 @@ public class MainActivity extends BaseActivity {
         this.location = location;
     }
 
-    private String texts[] = {"首页","附近","购物车", "订单", "我的"};
+    private String texts[] = {"首页","附近", "订单", "我的"};//"购物车"
     private Class fragmentArray[] = {FirstFragment.class,
             HomeFragment.class,
-            ShopCarFragment.class,
+//            ShopCarFragment.class,
             OrderFragment.class,
             UserCenterFragment.class};
     private long fastTime = 0;
@@ -48,7 +47,7 @@ public class MainActivity extends BaseActivity {
     private int imageBG[] = {
             R.drawable.tab_content_image_selector1,
             R.drawable.tab_content_image_selector4,
-            R.drawable.tab_content_image_selector5,
+//            R.drawable.tab_content_image_selector5,
             R.drawable.tab_content_image_selector2,
             R.drawable.tab_content_image_selector3};
     private long secondTime;
