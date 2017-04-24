@@ -48,7 +48,7 @@ public class NearbyGoodsAdapter extends MyBaseAdapter<GoodsEntity> {
         ViewHolder vh;
         //第二部，判读convView是否为空，为空则新建
         if (convertView == null) {
-            convertView = View.inflate(ctx, R.layout.item_goods_list, null);
+            convertView = View.inflate(ctx, R.layout.item_goods_list1, null);
             vh = new ViewHolder(convertView);
             convertView.setTag(vh);
         }

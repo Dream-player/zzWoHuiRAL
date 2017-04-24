@@ -2,7 +2,9 @@ package whcs.wohui.zz.fragment;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
@@ -11,7 +13,9 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,18 +26,27 @@ import com.baidu.location.LocationClientOption;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.adapter.CBPageAdapter;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
+import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.handmark.pulltorefresh.library.PullToRefreshListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
 import whcs.wohui.zz.Bean.AdListBean;
+import whcs.wohui.zz.Bean.GetNoticeBean;
 import whcs.wohui.zz.Bean.GoodsListBean;
 import whcs.wohui.zz.Bean.GoodsListBean.DataEntity.GoodsEntity;
+import whcs.wohui.zz.Bean.NearbyShopBean;
+import whcs.wohui.zz.activity.AdActivity;
+import whcs.wohui.zz.activity.ShopActivity;
 import whcs.wohui.zz.adapter.NearbyGoodsAdapter;
 import whcs.wohui.zz.callback.AdListCallBack;
+import whcs.wohui.zz.callback.GetNoticeCallBack;
 import whcs.wohui.zz.callback.GoodsListCallBack;
+import whcs.wohui.zz.callback.NearbyShopCallBack;
 import whcs.wohui.zz.listener.SwipeListViewOnScrollListener;
+import whcs.wohui.zz.myview.MyAlwaysRunTextView;
 import whcs.wohui.zz.service.LocationService;
 import whcs.wohui.zz.url.ParamsKey;
 import whcs.wohui.zz.url.Urls;
@@ -64,12 +77,26 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
     private SwipeRefreshLayout swipeRefLayout;
     private NearbyGoodsAdapter goodsListAdapter;
     private ListView listView;
+    private PullToRefreshListView mainPullList;
     private TextView textView;
+    private MyAlwaysRunTextView userLocationAdd;
+    private LinearLayout icon1;
+    private LinearLayout icon2;
+    private LinearLayout icon3;
+    private LinearLayout icon4;
+    private LinearLayout icon5;
+    private LinearLayout icon6;
+    private LinearLayout icon7;
+    private LinearLayout icon8;
 
 
     private double latitude;
     private double longitude;
     private LocationService locService;
+    private static final int NS_CALLBACK_SUCCESS = 10003;//附近商家请求成功
+    private static final int NS_CALLBACK_DEFEAT = 10004;//附近商家请求失败
+    private static final int GN_CALLBACK_SUCCESS = 10005;//附近商家请求成功
+    private static final int GN_CALLBACK_DEFEAT = 10006;//附近商家请求失败
     private static final int GET_GL_SUCCESS = 1100;//得到商品成功
     private static final int GET_GL_DEFEAT = 1101;//得到商品失败
     private static final int ImagesRequest_OK = 4984;
@@ -77,11 +104,15 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
     private MyRequestParams params = new MyRequestParams();
 
     private List<GoodsEntity> goodsList=new ArrayList<>();
+    private List<NearbyShopBean.DataEntity> shopEntityList = new ArrayList<>();
+    private List<String> imageList1 = new ArrayList<>();
+    private String shopnumer1;
 
     private void assignViews(View v) {
 
         swipeRefLayout = (SwipeRefreshLayout) v.findViewById(R.id.swipeRefLayout);
-        listView = (ListView) v.findViewById(R.id.mainlistview);
+        mainPullList = (PullToRefreshListView) v.findViewById(R.id.mainPullList1);
+        listView = mainPullList.getRefreshableView();
 
 
     }
@@ -101,12 +132,22 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
         initListener();
 
         imagesADRequest();
+//        textADRequest(shopnumer1);
         return v;
     }
 
     private void addListHead() {
         View v = LayoutInflater.from(ctx).inflate(R.layout.first_list_head, listView, false);
         convenientBanner = (ConvenientBanner) v.findViewById(R.id.convenientBanner);
+        userLocationAdd = (MyAlwaysRunTextView) v.findViewById(R.id.userLocationAdd1);
+        icon1= (LinearLayout) v.findViewById(R.id.yunjie_first_icon);
+        icon2= (LinearLayout) v.findViewById(R.id.yundian_first_icon);
+        icon3= (LinearLayout) v.findViewById(R.id.yunyou_first_icon);
+        icon4= (LinearLayout) v.findViewById(R.id.yunlian_first_icon);
+        icon5= (LinearLayout) v.findViewById(R.id.yunshang_first_icon);
+        icon6= (LinearLayout) v.findViewById(R.id.qiangbao_first_icon);
+        icon7= (LinearLayout) v.findViewById(R.id.chongzhi_first_icon);
+        icon8= (LinearLayout) v.findViewById(R.id.xinwen_first_icon);
 
 //        rlNoData = (LinearLayout) v.findViewById(R.id.rl_no_data);
         listView.addHeaderView(v);
@@ -141,31 +182,84 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
         });
     }
 
+    /**
+     * 网络请求获得滚动字幕
+     *
+     * @param shopnumber
+     *
+     */
+    private void textADRequest(String shopnumber) {
+//        showDialog(ctx);
+        params.clear();
+        params.addStringRequest(ParamsKey.ShopSerialNumber, shopnumber);
+        String strUrl = Urls.GetNotice;
+        myOkHttpUtils.postRequest(strUrl, params, new GetNoticeCallBack(){
+            @Override
+            public void onError(Call call, Exception e) {
+                Toast.makeText(ctx, "网络请求失败", Toast.LENGTH_SHORT);
+                swipeRefLayout.setRefreshing(false);
+                handler.sendEmptyMessage(GN_CALLBACK_DEFEAT);
+
+            }
+
+            @Override
+            public void onResponse(GetNoticeBean response) {
+                swipeRefLayout.setRefreshing(false);
+                if (response.getState() == 1) {
+                    Message msg = new Message();
+                    msg.obj = response;
+                    msg.what = GN_CALLBACK_SUCCESS;
+                    handler.sendMessage(msg);
+                } else {
+                    Toast.makeText(ctx, "返回网络状态" + response.getState(), Toast.LENGTH_SHORT).show();
+                    dismissDialog();
+                }
+            }
+        });
+
+    }
+
     private void initListener() {
 
+        mainPullList.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                LogUtils.outLog("checked");
+                return false;
+            }
+        });
         listView.setAdapter(goodsListAdapter);
-        //给listView设置item监听
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                LogUtils.e("点击位置:"+position);
-//                int i = position - 2;
-//                Intent intent = new Intent();
-//                if (!isLogin()) {
-//                    LogUtils.e("login");
-//                    login(intent);
-//                } else {
-//                    intent.setClass(ctx, ShopActivity.class);
-//                    NearbyShopBean.DataEntity data = shopEntityList.get(i);
-//                    intent.putExtra("serialNumber", data.getS_GUID());
-//                    intent.putExtra("MinMoney", data.getS_MinMoney());
-//                    intent.putExtra("shopName", data.getS_Name());
-//                    LogUtils.e(position + "");
-//                    startActivity(intent);
-//                }
-//
-//            }
-//        });
+//        给listView设置item监听
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                LogUtils.e("点击位置:"+position);
+                int i = position - 2;
+                Intent intent = new Intent();
+                if (!isLogin()) {
+                    LogUtils.e("login");
+                    login(intent);
+                } else {
+                    intent.setClass(ctx, ShopActivity.class);
+                    NearbyShopBean.DataEntity data = shopEntityList.get(0);
+                    intent.putExtra("serialNumber", data.getS_GUID());
+                    intent.putExtra("MinMoney", data.getS_MinMoney());
+                    intent.putExtra("shopName", data.getS_Name());
+                    LogUtils.e(position + "");
+                    startActivity(intent);
+                }
+
+            }
+        });
+
+        icon1.setOnClickListener(this);
+        icon2.setOnClickListener(this);
+        icon3.setOnClickListener(this);
+        icon4.setOnClickListener(this);
+        icon5.setOnClickListener(this);
+        icon6.setOnClickListener(this);
+        icon7.setOnClickListener(this);
+        icon8.setOnClickListener(this);
     }
 
     private void initThisData() {
@@ -175,7 +269,8 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
 
         goodsListAdapter = new NearbyGoodsAdapter(goodsList, ctx);
 
-//        myListScrollListener = new SwipeListViewOnScrollListener(swipeRefLayout);
+        myListScrollListener = new SwipeListViewOnScrollListener(swipeRefLayout);
+        mainPullList.setOnScrollListener(myListScrollListener);
 
         //TODO 设置上拉刷新
 //        myPullToRefreshListener = new MyPullToRefreshListener();
@@ -215,12 +310,14 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
                 //设置指示器的方向
                 .setPageIndicatorAlign(ConvenientBanner.PageIndicatorAlign.CENTER_HORIZONTAL);
         convenientBanner.startTurning(3000);
-        convenientBanner.setOnTouchListener(new View.OnTouchListener() {
+        convenientBanner.setOnItemClickListener(new OnItemClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-//                swipeRefLayout.setEnabled(false);
-                LogUtils.outLog("checked");
-                return true;
+            public void onItemClick(int position) {
+                Intent intent= new Intent();
+                intent.setClass(ctx, AdActivity.class);
+                intent.putExtra("position", position+"");
+                LogUtils.e(position + "");
+                startActivity(intent);
             }
         });
 
@@ -235,7 +332,33 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
 
     @Override
     public void onClick(View v) {
-
+        switch (v.getId()) {
+            case R.id.yunjie_first_icon:
+                openBrower("http://yj.wohui365.com");
+                break;
+            case R.id.yundian_first_icon:
+                openBrower("http://yd.wohui365.com");
+                break;
+            case R.id.yunyou_first_icon:
+                openBrower("http://yly.wohui365.com");
+                break;
+            case R.id.yunlian_first_icon:
+                openBrower("http://f.yd.wohui365.com");
+                break;
+            case R.id.yunshang_first_icon:
+                openBrower("http://f.yd.wohui365.com/m/index.php?mod=mall&act=index");
+                break;
+            case R.id.qiangbao_first_icon:
+                openBrower("http://qb.wohui365.com");
+                break;
+            case R.id.chongzhi_first_icon:
+                Toast.makeText(ctx, "开发中，敬请期待", Toast.LENGTH_SHORT).show();
+//                openBrower("https://www.baidu.com/");
+                break;
+            case R.id.xinwen_first_icon:
+                openBrower("http://www.wohuijituan.com/news/news.html");
+                break;
+        }
     }
 
     /**
@@ -293,6 +416,7 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
                 ((MainActivity)getActivity()).setmLocation(location);
 
                 getGoods(latitude,longitude);
+                getNearbyShop(latitude,longitude);
 
             } else {
                 Toast.makeText(ctx, "定位失败", Toast.LENGTH_SHORT).show();
@@ -312,6 +436,44 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
                 showToast(ctx,"请设置允许定位权限!");
             }
         }
+    }
+
+    /**
+     * 网络请求获得附近商家
+     *
+     * @param latitude  纬度
+     * @param longitude 经度
+     */
+    private void getNearbyShop(double latitude, double longitude) {
+//        showDialog(ctx);
+        params.clear();
+        params.addStringRequest(ParamsKey.NearbyShop_Latitude, latitude + "");
+        params.addStringRequest(ParamsKey.NearbyShop_Longitude, longitude + "");
+        String strUrl = Urls.GetNearbyShop;
+        myOkHttpUtils.postRequest(strUrl, params, new NearbyShopCallBack() {
+            @Override
+            public void onError(Call call, Exception e) {
+                Toast.makeText(ctx, "网络请求失败", Toast.LENGTH_SHORT);
+                swipeRefLayout.setRefreshing(false);
+                handler.sendEmptyMessage(NS_CALLBACK_DEFEAT);
+
+            }
+
+            @Override
+            public void onResponse(NearbyShopBean response) {
+                swipeRefLayout.setRefreshing(false);
+                if (response.getState() == 1) {
+                    Message msg = new Message();
+                    msg.obj = response;
+                    msg.what = NS_CALLBACK_SUCCESS;
+                    handler.sendMessage(msg);
+                } else {
+                    Toast.makeText(ctx, "返回网络状态" + response.getState(), Toast.LENGTH_SHORT).show();
+                    dismissDialog();
+                }
+            }
+        });
+
     }
 
     /**
@@ -365,8 +527,10 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
                     AdListBean adListData = (AdListBean) msg.obj;
                     // 创建一个list存放imageURl
                     List<String> imageList = new ArrayList<>();
+
                     for (AdListBean.DataEntity dataEntity : adListData.getData()) {
 //                        imageList.add(dataEntity.getAD_ImgUrl());
+//                        imageList1.add(dataEntity.getAD_LinkUrl());
                     }
                     imageList.add("http://img10.360buyimg.com/cms/jfs/t3163/17/1319630042/109911/4d61d2e0/57c94d2cN0928fc96.jpg");
                     imageList.add("http://img11.360buyimg.com/cms/jfs/t3304/208/1257512630/85008/8158e0f/57c94d41Nb1910bf7.jpg");
@@ -375,9 +539,51 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
 
                     initListHead(imageList);
                     break;
+                case NS_CALLBACK_DEFEAT:
+//                    dismissDialog();
+                    break;
+                case NS_CALLBACK_SUCCESS:
+                    LogUtils.e("附近商家请求成功");
+                    NearbyShopBean data1 = (NearbyShopBean) msg.obj;
+                    if (data1.getData().size() == 0) {
+//                        rlNoData.setVisibility(View.VISIBLE);
+//                        Toast.makeText(ctx, "附近暂无商家", Toast.LENGTH_SHORT).show();
+                    } else {
+//                        rlNoData.setVisibility(View.GONE);
+//                        Toast.makeText(ctx, "附近商家请求成功", Toast.LENGTH_SHORT).show();
+
+                    }
+                    shopEntityList.clear();
+                    shopEntityList.addAll(data1.getData());
+                    shopnumer1 = shopEntityList.get(0).getS_GUID();
+                    textADRequest(shopnumer1);
+
+                    break;
+
+                case GN_CALLBACK_DEFEAT:
+//                    dismissDialog();
+                    break;
+                case GN_CALLBACK_SUCCESS:
+                    LogUtils.e("附近商家请求成功");
+                    GetNoticeBean data2 = (GetNoticeBean) msg.obj;
+                    String num=data2.getData();
+                    userLocationAdd.setText(num);
+                    break;
             }
         }
     };
+    /**
+     * 打开浏览器
+     *
+     * @param url
+     */
+    private void openBrower(String url) {
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.VIEW");
+        Uri content_url = Uri.parse(url);
+        intent.setData(content_url);
+        activity.startActivity(intent);
+    }
 
 
     @Override

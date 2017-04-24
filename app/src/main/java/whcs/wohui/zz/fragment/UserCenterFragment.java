@@ -9,11 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import whcs.wohui.zz.activity.UserInfoActivity;
-import whcs.wohui.zz.activity.LoginActivity;
-import whcs.wohui.zz.activity.MoreActivity;
 import whcs.wohui.zz.activity.AddressManageActivity;
+import whcs.wohui.zz.activity.MoreActivity;
 import whcs.wohui.zz.activity.UserCollectionActivity;
+import whcs.wohui.zz.activity.UserInfoActivity;
+import whcs.wohui.zz.activity.UserPurseActivity;
 import whcs.wohui.zz.utils.MyKey;
 import whcs.wohui.zz.whcouldsupermarket.MainActivity;
 import whcs.wohui.zz.whcouldsupermarket.R;
@@ -39,6 +39,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
     private TextView titleName;
     private LinearLayout llImSeller;
     private LinearLayout llBasicInfo;
+    private LinearLayout llUserPurse;
 
     private void assignViews(View view) {
         titleName = (TextView) view.findViewById(R.id.titleName);
@@ -53,6 +54,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         llMore = (LinearLayout) view.findViewById(R.id.llMore);
         llImSeller = (LinearLayout) view.findViewById(R.id.llImSeller);
         llBasicInfo = (LinearLayout) view.findViewById(R.id.llBasicInfo);
+        llUserPurse = (LinearLayout) view.findViewById(R.id.llUserPurse);
     }
 
     private Context ctx;
@@ -78,6 +80,7 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
         llManageAddress.setOnClickListener(this);
         llUserCollect.setOnClickListener(this);
         llHelpAndFeedBack.setOnClickListener(this);
+        llUserPurse.setOnClickListener(this);
         titleGoBack.setVisibility(View.GONE);
         titleName.setText("我的");
     }
@@ -145,11 +148,19 @@ public class UserCenterFragment extends BaseFragment implements View.OnClickList
                 }
                 break;
             case R.id.llHelpAndFeedBack:
-                showToast(ctx,"该功能暂未开放,敬请期待!");
+                showToast(ctx, "该功能暂未开放,敬请期待!");
+                break;
+            case R.id.llUserPurse:
+                if (activity.isLogin()) {
+                    intent.setClass(ctx, UserPurseActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                } else {
+                    login(intent);
+                }
                 break;
         }
     }
-
 
 
 }

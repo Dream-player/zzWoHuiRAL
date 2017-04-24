@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -96,7 +97,7 @@ public class NearbyShopAdapter extends MyBaseAdapter<NearbyShopBean.DataEntity> 
             tv.setText("营业中");
             tv.setTextColor(ctx.getResources().getColor(R.color.color_red));
         }else {
-            tv.setText("停止营业");
+            tv.setText("暂停营业");
             tv.setTextColor(ctx.getResources().getColor(R.color.color_666));
         }
     }
@@ -106,7 +107,8 @@ public class NearbyShopAdapter extends MyBaseAdapter<NearbyShopBean.DataEntity> 
         public final RatingBar rbshopstar;
         public final TextView tvshopstar;
         public final TextView tvShopRanking;
-        public final TextView tvLocation;
+//        public final TextView tvLocation;
+        public final LinearLayout tvLocation;
         public final ImageView ivShopHead;
         public final View root;
 
@@ -116,7 +118,7 @@ public class NearbyShopAdapter extends MyBaseAdapter<NearbyShopBean.DataEntity> 
             rbshopstar = (RatingBar) root.findViewById(R.id.rb_shop_stars);
             tvshopstar = (TextView) root.findViewById(R.id.tv_shop_star);
             tvShopRanking = (TextView) root.findViewById(R.id.tvShopRanking);
-            tvLocation = (TextView) root.findViewById(R.id.tvLocation);
+            tvLocation = (LinearLayout) root.findViewById(R.id.tvLocation);
             ivShopHead = (ImageView) root.findViewById(R.id.iv_shop_head);
             this.root = root;
         }

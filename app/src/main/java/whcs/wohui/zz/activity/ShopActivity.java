@@ -16,10 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shizhefei.view.indicator.FixedIndicatorView;
-import com.shizhefei.view.indicator.Indicator;
 import com.shizhefei.view.indicator.IndicatorViewPager;
-import com.shizhefei.view.indicator.slidebar.ColorBar;
-import com.shizhefei.view.indicator.transition.OnTransitionTextListener;
 
 import okhttp3.Call;
 import whcs.wohui.zz.Bean.ShopDetailBean;
@@ -51,7 +48,7 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "ShopActivity";
     private RelativeLayout goBack;
     private TextView titleName;
-    private Indicator indicator;
+    private FixedIndicatorView indicator;
     private ViewPager viewPager;
 //    private ImageView titleSearch;
     private RelativeLayout titleDoSearch;
@@ -173,13 +170,14 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
      * 给控件设置监听，添加适配器
      */
     private void initView(){
-        indicator.setScrollBar(new ColorBar(getApplicationContext(), getResources().getColor(R.color.mainColor), 5));
-        indicator.setOnTransitionListener(new OnTransitionTextListener()
-                .setColor(getResources().getColor(R.color.mainColor),
-                        getResources().getColor(R.color.color_666)));
-        // 将viewPager和indicator使用
+//        indicator.setScrollBar(new ColorBar(getApplicationContext(), getResources().getColor(R.color.mainColor), 4));
+//        indicator.setOnTransitionListener(new OnTransitionTextListener()
+//                .setColor(getResources().getColor(R.color.mainColor),
+//                        getResources().getColor(R.color.color_666)));
+//        indicator.setSplitMethod(2);
+//         将viewPager和indicator使用
         indicatorViewPager = new IndicatorViewPager(indicator, viewPager);
-        indicatorViewPager.setPageOffscreenLimit(5);
+        indicatorViewPager.setPageOffscreenLimit(4);
         inflate = LayoutInflater.from(getApplicationContext());
         myIndicatorFragmentAdapter = new MyIndicatorFragmentAdapter(getSupportFragmentManager());
         // 设置indicatorViewPager的适配器
@@ -241,7 +239,9 @@ public class ShopActivity extends BaseActivity implements View.OnClickListener {
 //                searchGoods();
                 setnumber(1);
                 indicatorViewPager.setCurrentItem(0,true);
+
                 myIndicatorFragmentAdapter.notifyDataSetChanged();
+
 //                activity.getindicatorViewPager().setCurrentItem(0,true);
 //                activity.getmyIndicatorFragmentAdapter().notifyDataSetChanged();
                 break;

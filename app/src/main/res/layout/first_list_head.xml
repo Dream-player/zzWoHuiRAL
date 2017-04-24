@@ -12,9 +12,41 @@
         app:canLoop="true"
         android:layout_marginTop="2dp"
         />
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="超市公告:"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/color_red"
+            android:textSize="14sp"/>
+
+    <whcs.wohui.zz.myview.MyAlwaysRunTextView
+        android:id="@+id/userLocationAdd1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="@dimen/fragment_home_title_bar_tv_margin"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textSize="14sp"/>
+</LinearLayout>
+    <View
+        android:layout_marginTop="10dp"
+        android:background="@color/white_6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
     <LinearLayout
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -26,9 +58,11 @@
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="vertical"
+        android:background="@drawable/selector_yunjie"
         >
 
         <ImageView
+            android:background="@drawable/selector_yunjie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -49,9 +83,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/selector_yunjie"
             >
 
             <ImageView
+                android:background="@drawable/selector_yunjie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -72,9 +108,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/selector_yunjie"
             >
 
             <ImageView
+                android:background="@drawable/selector_yunjie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -95,9 +133,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/selector_yunjie"
             >
 
             <ImageView
+                android:background="@drawable/selector_yunjie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -125,9 +165,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/selector_yunjie"
             >
 
             <ImageView
+                android:background="@drawable/selector_yunjie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -148,9 +190,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/selector_yunjie"
             >
 
             <ImageView
+                android:background="@drawable/selector_yunjie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -171,9 +215,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/selector_yunjie"
             >
 
             <ImageView
+                android:background="@drawable/selector_yunjie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -194,9 +240,11 @@
             android:layout_weight="1"
             android:gravity="center"
             android:orientation="vertical"
+            android:background="@drawable/selector_yunjie"
             >
 
             <ImageView
+                android:background="@drawable/selector_yunjie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"

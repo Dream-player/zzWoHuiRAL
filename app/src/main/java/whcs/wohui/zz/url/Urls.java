@@ -75,8 +75,10 @@ public class Urls {
     public static final String CancelOrder = Base_Url+"CancelOrder";
     //跟新接口
     public static final String UpdateApp = Base_Url + "UpdateApp";
-
+//附近超市商品列表
     public static final String NearSMCommList = Base_Url + "NearSMCommList";
+
+    public static final String GetNotice = Base_Url + "GetNotice";
 
 
 }

@@ -130,76 +130,12 @@
                     android:textColor="@color/color_333"
                     android:textSize="16sp"/>
             </RelativeLayout>
-
-            <TextView
-                style="@style/UserInfoBTitleStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="我的钱包"
-                />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="13dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="剩余激活币"
-                    android:textColor="@color/color_333"
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:id="@+id/tvCanregCount"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text=""
-                    android:textColor="@color/color_red"
-                    android:textSize="16sp"/>
-            </RelativeLayout>
-
-            <include layout="@layout/split_line"/>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="13dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="消费奖金"
-                    android:textColor="@color/color_333"
-                    android:textSize="16sp"/>
-
-                <TextView
-                    android:id="@+id/tvConsumeBonus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:text=""
-                    android:textColor="@color/color_red"
-                    android:textSize="16sp"/>
-            </RelativeLayout>
-
-            <TextView
-                android:visibility="gone"
-                style="@style/UserInfoBTitleStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="安全设置"
-                />
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/color_d2"/>
+
+
 
             <RelativeLayout
                 android:layout_width="match_parent"

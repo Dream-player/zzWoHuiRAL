@@ -16,7 +16,7 @@
     <style name="userCenterMenu">
         <item name="android:paddingBottom">@dimen/style_usercenterMenu_padding</item>
         <item name="android:paddingTop">@dimen/style_usercenterMenu_padding</item>
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@drawable/selector_yunjie</item>
     </style>
 
     <style name="FeelyouWindowAnimTheme" parent="@android:style/Animation.Activity">

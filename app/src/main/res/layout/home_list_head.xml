@@ -56,7 +56,7 @@
             android:layout_width="30dp"
             android:layout_height="1dp"/>
         <TextView
-            android:textSize="16dp"
+            android:textSize="17dp"
             android:layout_gravity="center"
             android:text="附近超市"
             android:textColor="@color/color_000"

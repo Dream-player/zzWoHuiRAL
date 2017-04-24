@@ -36,8 +36,8 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
     private TextView tvChangeLoginPwd;
     private TextView tvChangePayPwd;
     private RelativeLayout goBack;
-    private TextView tvCanregCount;
-    private TextView tvConsumeBonus;
+//    private TextView tvCanregCount;
+//    private TextView tvConsumeBonus;
     private TextView tvRealName;
     private TextView tvPhoneNum;
     private TextView tvAddress;
@@ -54,8 +54,8 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
         tvChangeLoginPwd = (TextView) findViewById(R.id.tvChangeLoginPwd);
         tvChangePayPwd = (TextView) findViewById(R.id.tvChangePayPwd);
         tvLogOut = (TextView) findViewById(R.id.tvLogout);
-        tvCanregCount = (TextView) findViewById(R.id.tvCanregCount);
-        tvConsumeBonus = (TextView) findViewById(R.id.tvConsumeBonus);
+//        tvCanregCount = (TextView) findViewById(tvCanregCount);
+//        tvConsumeBonus = (TextView) findViewById(tvConsumeBonus);
     }
 
     private Context ctx;
@@ -125,8 +125,8 @@ public class UserInfoActivity extends BaseActivity implements View.OnClickListen
         tvAddress.setText(dataEntity.getC_Province()
                 + dataEntity.getC_City() +
                 dataEntity.getC_District());
-        tvCanregCount.setText(dataEntity.getC_CanRegCount());
-        tvConsumeBonus.setText(dataEntity.getC_Consume_Bonus());
+//        tvCanregCount.setText(dataEntity.getC_CanRegCount());
+//        tvConsumeBonus.setText(dataEntity.getC_Consume_Bonus());
     }
 
     @Override

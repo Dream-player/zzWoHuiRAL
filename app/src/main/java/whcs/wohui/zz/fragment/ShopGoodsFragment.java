@@ -179,7 +179,7 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
     @Override
     public void initEachData() {
         LogUtils.e("initEachData()");
-        Toast.makeText(ctx, "你好剑圣", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(ctx, "你好剑圣", Toast.LENGTH_SHORT).show();
         activity.setnumber(activity.getnumber()+1);
         if (activity.getnumber()>2) {
             getGoodsnumber(shopSerialNo, activity.getpageIndexnum(), activity.getnumberCate());
@@ -289,7 +289,6 @@ public class ShopGoodsFragment extends BaseFragment implements View.OnClickListe
                     goodsNumList.addAll(myDBHelper.getGoodsOrderCount(goodsList));
                     goodsListAdapter.notifyDataSetChanged();
                     pageIndex++;
-
                     break;
                 case GET_GL_SUCCESSNUM:
                     lvGoods.onRefreshComplete();

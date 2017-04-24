@@ -8,8 +8,8 @@ android {
         applicationId "whcs.wohui.zz.whcouldsupermarket"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 170422
-        versionName "1.1.0"
+        versionCode 170424
+        versionName "1.1.1"
     }
     buildTypes {
         release {
