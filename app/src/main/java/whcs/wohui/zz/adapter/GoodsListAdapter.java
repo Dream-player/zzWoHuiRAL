@@ -119,12 +119,42 @@ public class GoodsListAdapter extends MyBaseAdapter<GoodsEntity> {
             public void onClick(View v) {
                 String url = dataList.get(position).getCS_Describe();
                 String shopName = dataList.get(position).getCS_Name();
+                String id= dataList.get(position).getCS_GUID();
                 Intent intent = new Intent(ctx, GoodsDetailActivity.class);
                 intent.putExtra("url",url);
                 intent.putExtra("shopName",shopName);
+                intent.putExtra("id",id);
                 ctx.startActivity(intent);
             }
         });
+
+        vh.goodsInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = dataList.get(position).getCS_Describe();
+                String shopName = dataList.get(position).getCS_Name();
+                String id= dataList.get(position).getCS_GUID();
+                Intent intent = new Intent(ctx, GoodsDetailActivity.class);
+                intent.putExtra("url",url);
+                intent.putExtra("shopName",shopName);
+                intent.putExtra("id",id);
+                ctx.startActivity(intent);
+            }
+        });
+        vh.goodsPrice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = dataList.get(position).getCS_Describe();
+                String shopName = dataList.get(position).getCS_Name();
+                String id= dataList.get(position).getCS_GUID();
+                Intent intent = new Intent(ctx, GoodsDetailActivity.class);
+                intent.putExtra("url",url);
+                intent.putExtra("shopName",shopName);
+                intent.putExtra("id",id);
+                ctx.startActivity(intent);
+            }
+        });
+
         vh.ivGoodsAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -305,6 +335,7 @@ public class GoodsListAdapter extends MyBaseAdapter<GoodsEntity> {
         public final TextView tvGoodsSales;
         public final TextView tvGoodsDescription;
         public final LinearLayout goodsInfo;
+        public final LinearLayout goodsPrice;
         public final TextView tvGoodsPrice;
         public final TextView tvGoodsIntegral;
         public final ImageView ivGoodsMinus;
@@ -318,6 +349,7 @@ public class GoodsListAdapter extends MyBaseAdapter<GoodsEntity> {
             tvGoodsSales = (TextView) root.findViewById(R.id.tvGoodsSales);
             tvGoodsDescription = (TextView) root.findViewById(R.id.tvGoodsDescription);
             goodsInfo = (LinearLayout) root.findViewById(R.id.goodsInfo);
+            goodsPrice = (LinearLayout) root.findViewById(R.id.goodsPrice);
             tvGoodsPrice = (TextView) root.findViewById(R.id.tvGoodsPrice);
             tvGoodsIntegral = (TextView) root.findViewById(R.id.tvGoodsIntegral);
             ivGoodsMinus = (ImageView) root.findViewById(R.id.ivGoodsMinus);

@@ -22,6 +22,7 @@ public class GoodsDetailActivity extends BaseActivity {
     private final String TAG = "GoodsDetailActivity";
     private String url;
     private String shopName;
+    private String id;
 
     @Override
     public void myOnCreate(Bundle savedInstanceState) {
@@ -80,20 +81,20 @@ public class GoodsDetailActivity extends BaseActivity {
             showToast(this, "该商品暂无详情!");
             return;
         }
-        web.loadUrl(url);
-        StringBuilder sb = new StringBuilder();
-        //拼接一段HTML代码
-        sb.append("<html>");
-        sb.append("<head>");
-//        sb.append("<title>欢迎你</title>");
-        sb.append("</head>");
-        sb.append("<body>");
-        sb.append(url);
-        sb.append("</body>");
-        sb.append("</html>");
-        LogUtils.e(sb.toString());
-//        web.loadData(sb.toString(), "text/html", "utf-8");
-        web.loadData(sb.toString(), "text/html; charset=UTF-8", null);//这种写法可以正确解码
+        web.loadUrl("http://yc.wohui365.com/Mobile/GoodsDetail?Id="+id);
+//        StringBuilder sb = new StringBuilder();
+//        //拼接一段HTML代码
+//        sb.append("<html>");
+//        sb.append("<head>");
+////        sb.append("<title>欢迎你</title>");
+//        sb.append("</head>");
+//        sb.append("<body>");
+//        sb.append(url);
+//        sb.append("</body>");
+//        sb.append("</html>");
+//        LogUtils.e(sb.toString());
+////        web.loadData(sb.toString(), "text/html", "utf-8");
+//        web.loadData(sb.toString(), "text/html; charset=UTF-8", null);//这种写法可以正确解码
         web.requestFocusFromTouch();
         WebSettings settings = web.getSettings();
         settings.setJavaScriptEnabled(true);
@@ -116,6 +117,9 @@ public class GoodsDetailActivity extends BaseActivity {
     private void initData() {
         shopName = getIntent().getStringExtra("shopName");
         url = getIntent().getStringExtra("url");
+        id = getIntent().getStringExtra("id");
+//        Toast.makeText(this, id, Toast.LENGTH_SHORT).show();
+
     }
 
     /**

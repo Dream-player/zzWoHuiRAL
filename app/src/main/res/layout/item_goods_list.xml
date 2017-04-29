@@ -11,7 +11,9 @@
         android:layout_height="wrap_content"
         android:background="@color/white"
         android:padding="13dp"
-        >
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <ImageView
 
@@ -22,6 +24,7 @@
             android:layout_centerVertical="true"/>
 
         <LinearLayout
+            android:paddingBottom="12dp"
             android:id="@+id/goodsInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,15 +75,16 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/goodsInfo"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="12dp"
+
             android:layout_toRightOf="@id/ivGoodsImage"
             android:layout_alignBottom="@id/ivGoodsImage"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/goodsPrice"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
@@ -105,6 +109,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_marginLeft="50dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">

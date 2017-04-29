@@ -18,10 +18,11 @@
         android:padding="@dimen/fragment_home_title_bar_padding">
 
         <TextView
+            android:id="@+id/title1"
             android:textSize="16sp"
             android:gravity="center"
             android:textColor="@color/homeTabHostBg"
-            android:text="我惠超市旗舰店"
+            android:text=""
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>

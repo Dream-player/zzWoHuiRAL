@@ -79,6 +79,7 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
     private ListView listView;
     private PullToRefreshListView mainPullList;
     private TextView textView;
+    private TextView textView1;
     private MyAlwaysRunTextView userLocationAdd;
     private LinearLayout icon1;
     private LinearLayout icon2;
@@ -113,8 +114,7 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
         swipeRefLayout = (SwipeRefreshLayout) v.findViewById(R.id.swipeRefLayout);
         mainPullList = (PullToRefreshListView) v.findViewById(R.id.mainPullList1);
         listView = mainPullList.getRefreshableView();
-
-
+        textView1= (TextView) v.findViewById(R.id.title1);
     }
 
     @Override
@@ -557,6 +557,7 @@ public class FirstFragment extends BaseFragment implements View.OnClickListener,
                     shopEntityList.addAll(data1.getData());
                     shopnumer1 = shopEntityList.get(0).getS_GUID();
                     textADRequest(shopnumer1);
+                    textView1.setText(shopEntityList.get(0).getS_Name());
 
                     break;
 
