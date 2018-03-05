@@ -46,6 +46,7 @@ public class AdActivity extends BaseActivity{
 
         titleName.setText("我惠超市");
 
+
         WebSettings settings = mWebView.getSettings();
         settings.setJavaScriptEnabled(true);
 
