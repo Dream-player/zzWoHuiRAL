@@ -37,6 +37,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private String texts[] = {"商城", "分类", "发现", "我的"};//"购物车"
+//    第一次的小测试
     private Class fragmentArray[] = {
             BlankFragment1.class,
             BlankFragment2.class,
