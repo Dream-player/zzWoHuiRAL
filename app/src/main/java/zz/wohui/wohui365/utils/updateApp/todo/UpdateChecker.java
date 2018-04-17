@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils.updateApp.todo;
+package zz.wohui.wohui365.utils.updateApp.todo;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -15,11 +15,11 @@ import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyUtils;
-import zz.wohui.zz.utils.updateApp.util.CommonUtil;
-import zz.wohui.zz.utils.updateApp.util.HttpUtil;
-import zz.wohui.zz.utils.updateApp.util.LogUtil;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyUtils;
+import zz.wohui.wohui365.utils.updateApp.util.CommonUtil;
+import zz.wohui.wohui365.utils.updateApp.util.HttpUtil;
+import zz.wohui.wohui365.utils.updateApp.util.LogUtil;
 
 public class UpdateChecker {
 

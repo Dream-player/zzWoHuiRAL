@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import zz.wohui.wohui365.utils.LogUtils;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * Created by zsy_18 on 2016/12/9.

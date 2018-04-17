@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -17,9 +17,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import zz.wohui.zz.adapter.SpinnerAdapter;
-import zz.wohui.zz.myview.SpinnerPopWindow;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.adapter.SpinnerAdapter;
+import zz.wohui.wohui365.myview.SpinnerPopWindow;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：申请退款页面

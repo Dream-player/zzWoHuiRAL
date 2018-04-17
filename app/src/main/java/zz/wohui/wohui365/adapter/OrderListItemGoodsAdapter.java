@@ -9,7 +9,7 @@ import java.util.List;
 
 import zz.wohui.wohui365.Bean.OrderDetailData;
 import zz.wohui.wohui365.utils.LogUtils;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：订单列表中嵌套商品列表ListView的Adapter

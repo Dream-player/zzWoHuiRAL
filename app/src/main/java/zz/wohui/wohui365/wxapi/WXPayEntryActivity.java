@@ -1,4 +1,4 @@
-package zz.wohui.wohui365.whcouldsupermarket.wxapi;
+package zz.wohui.wohui365.wxapi;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +16,7 @@ import net.sourceforge.simcpux.Constants;
 
 import zz.wohui.wohui365.activity.OrderDetailsActivity;
 import zz.wohui.wohui365.utils.LogUtils;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
 

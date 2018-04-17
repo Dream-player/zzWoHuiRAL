@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,16 +11,16 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import okhttp3.Call;
-import zz.wohui.zz.Bean.LoginBean;
-import zz.wohui.zz.callback.LoginCallBack;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyKey;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.whcouldsupermarket.MainActivity;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.LoginBean;
+import zz.wohui.wohui365.callback.LoginCallBack;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyKey;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.MainActivity;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：登录页面

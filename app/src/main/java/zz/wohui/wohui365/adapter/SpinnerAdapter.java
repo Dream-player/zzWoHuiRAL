@@ -1,4 +1,4 @@
-package zz.wohui.zz.adapter;
+package zz.wohui.wohui365.adapter;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：自定义Spinner的适配器

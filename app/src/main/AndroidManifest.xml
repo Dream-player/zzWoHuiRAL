@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
-    package="whcs.wohui.zz.whcouldsupermarket"
+    package="zz.wohui.wohui365"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 
@@ -28,7 +28,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="whcs.wohui.zz.activity.WelcomeActivity">
+        <activity android:name=".activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -36,35 +36,35 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.ShopMapActivity"
+        <activity android:name=".activity.ShopMapActivity"
             android:theme="@style/AppTheme"/>
-        <activity android:name="whcs.wohui.zz.activity.BDMapActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.ShopActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.OkHttpTestActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.LoginActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.SearchLocationActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.EvaluateOrderActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.OrderDetailsActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.RefundDetailsActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.ApplyRefundActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.MoreActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.UserInfoActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.ChangePwdActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.AddressManageActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.EditAddressActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.UserCollectionActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.ShopLocationActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.WHInfoActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.AddUserLocationActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.ShopGoodsActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.GoodsDetailActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.AdActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.UserPurseActivity"/>
+        <activity android:name=".activity.BDMapActivity"/>
+        <activity android:name=".activity.ShopActivity"/>
+        <activity android:name=".activity.OkHttpTestActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.SearchLocationActivity"/>
+        <activity android:name=".activity.EvaluateOrderActivity"/>
+        <activity android:name=".activity.OrderDetailsActivity"/>
+        <activity android:name=".activity.RefundDetailsActivity"/>
+        <activity android:name=".activity.ApplyRefundActivity"/>
+        <activity android:name=".activity.MoreActivity"/>
+        <activity android:name=".activity.UserInfoActivity"/>
+        <activity android:name=".activity.ChangePwdActivity"/>
+        <activity android:name=".activity.AddressManageActivity"/>
+        <activity android:name=".activity.EditAddressActivity"/>
+        <activity android:name=".activity.UserCollectionActivity"/>
+        <activity android:name=".activity.ShopLocationActivity"/>
+        <activity android:name=".activity.WHInfoActivity"/>
+        <activity android:name=".activity.AddUserLocationActivity"/>
+        <activity android:name=".activity.ShopGoodsActivity"/>
+        <activity android:name=".activity.GoodsDetailActivity"/>
+        <activity android:name=".activity.AdActivity"/>
+        <activity android:name=".activity.UserPurseActivity"/>
         <activity
-            android:name="whcs.wohui.zz.activity.ShopSearchActivity"
+            android:name=".activity.ShopSearchActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
-        <activity android:name="whcs.wohui.zz.activity.ConfirmOrderActivity"/>
-        <activity android:name="whcs.wohui.zz.activity.PayOrderActivity">
+        <activity android:name=".activity.ConfirmOrderActivity"/>
+        <activity android:name=".activity.PayOrderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT"/>
@@ -88,7 +88,7 @@
             android:exported="true">
         </service>
         <service
-            android:name="whcs.wohui.zz.utils.updateApp.todo.DownloadService">
+            android:name=".utils.updateApp.todo.DownloadService">
 
         </service>
 

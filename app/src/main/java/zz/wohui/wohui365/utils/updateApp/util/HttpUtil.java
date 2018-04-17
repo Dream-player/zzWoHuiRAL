@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils.updateApp.util;
+package zz.wohui.wohui365.utils.updateApp.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;

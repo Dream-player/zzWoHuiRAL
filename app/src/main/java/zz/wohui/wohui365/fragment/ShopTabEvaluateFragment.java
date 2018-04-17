@@ -1,4 +1,4 @@
-package zz.wohui.zz.fragment;
+package zz.wohui.wohui365.fragment;
 
 import android.content.Context;
 import android.os.Handler;
@@ -15,18 +15,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
-import zz.wohui.zz.Bean.ShopCommentListBean;
-import zz.wohui.zz.Bean.ShopDetailBean;
-import zz.wohui.zz.activity.ShopActivity;
-import zz.wohui.zz.adapter.ShopEvaluateListAdapter;
-import zz.wohui.zz.callback.CommentListCallBack;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.utils.MyUtils;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.ShopCommentListBean;
+import zz.wohui.wohui365.Bean.ShopDetailBean;
+import zz.wohui.wohui365.activity.ShopActivity;
+import zz.wohui.wohui365.adapter.ShopEvaluateListAdapter;
+import zz.wohui.wohui365.callback.CommentListCallBack;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.utils.MyUtils;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：商家——评价

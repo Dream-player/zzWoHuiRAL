@@ -27,7 +27,7 @@
     </LinearLayout>
 
 
-    <whcs.wohui.zz.myview.MyGridViewInListView
+    <zz.wohui.wohui365.myview.MyGridViewInListView
         android:id="@+id/gvCategoryC"
         android:background="@color/white"
         android:layout_width="match_parent"

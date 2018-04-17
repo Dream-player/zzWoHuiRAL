@@ -50,14 +50,14 @@
         android:layout_marginTop="@dimen/item_order_tv_divide1_margin_top"
         android:background="@color/color_d2"/>
 
-    <whcs.wohui.zz.myview.MyListViewInListView
+    <zz.wohui.wohui365.myview.MyListViewInListView
         android:id="@+id/lvGoods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@android:color/transparent"
         android:dividerHeight="2dp"
         android:focusable="false"/>
-    <whcs.wohui.zz.myview.MyGridView
+    <zz.wohui.wohui365.myview.MyGridView
         android:id="@+id/gv_order_goods"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

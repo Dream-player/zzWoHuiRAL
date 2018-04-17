@@ -1,4 +1,4 @@
-package zz.wohui.zz.adapter;
+package zz.wohui.wohui365.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,9 +8,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import zz.wohui.zz.Bean.ShopCollectData;
-import zz.wohui.zz.activity.ShopMapActivity;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.ShopCollectData;
+import zz.wohui.wohui365.activity.ShopMapActivity;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：我的收藏

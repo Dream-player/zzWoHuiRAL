@@ -1,4 +1,4 @@
-package zz.wohui.zz.adapter;
+package zz.wohui.wohui365.adapter;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -12,9 +12,9 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 
-import zz.wohui.zz.Bean.OrderDetailData;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.OrderDetailData;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：

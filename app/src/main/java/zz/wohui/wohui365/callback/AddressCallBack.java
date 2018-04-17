@@ -1,10 +1,10 @@
-package zz.wohui.zz.callback;
+package zz.wohui.wohui365.callback;
 
 import com.google.gson.Gson;
 import com.zhy.http.okhttp.callback.Callback;
 
 import okhttp3.Response;
-import zz.wohui.zz.Bean.AddressBean;
+import zz.wohui.wohui365.Bean.AddressBean;
 
 /**
  * 说明：收货地址CallBacK类

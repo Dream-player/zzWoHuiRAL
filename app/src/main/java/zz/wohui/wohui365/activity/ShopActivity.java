@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,20 +19,20 @@ import com.shizhefei.view.indicator.FixedIndicatorView;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 
 import okhttp3.Call;
-import zz.wohui.zz.Bean.ShopDetailBean;
-import zz.wohui.zz.callback.ShopDetailCallBack;
-import zz.wohui.zz.fragment.BaseFragment;
-import zz.wohui.zz.fragment.ShopGoodsFragment;
-import zz.wohui.zz.fragment.ShopTabEvaluateFragment;
-import zz.wohui.zz.fragment.ShopTabGoodsFragment;
-import zz.wohui.zz.fragment.ShopTabStoreFragment;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.utils.ShopCartDatabaseHelper;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.ShopDetailBean;
+import zz.wohui.wohui365.callback.ShopDetailCallBack;
+import zz.wohui.wohui365.fragment.BaseFragment;
+import zz.wohui.wohui365.fragment.ShopGoodsFragment;
+import zz.wohui.wohui365.fragment.ShopTabEvaluateFragment;
+import zz.wohui.wohui365.fragment.ShopTabGoodsFragment;
+import zz.wohui.wohui365.fragment.ShopTabStoreFragment;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.utils.ShopCartDatabaseHelper;
+import zz.wohui.wohui365.R;
 
 import static android.support.v4.view.PagerAdapter.POSITION_NONE;
 

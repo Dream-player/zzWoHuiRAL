@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -33,23 +33,23 @@ import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Response;
-import zz.wohui.zz.Bean.AddCartBean;
-import zz.wohui.zz.Bean.DBgoodsData;
-import zz.wohui.zz.Bean.GoodsListBean;
+import zz.wohui.wohui365.Bean.AddCartBean;
+import zz.wohui.wohui365.Bean.DBgoodsData;
+import zz.wohui.wohui365.Bean.GoodsListBean;
 
-import zz.wohui.zz.Bean.GoodsListBean.DataEntity.GoodsEntity;
-import zz.wohui.zz.adapter.GoodsListAdapter;
-import zz.wohui.zz.adapter.ShopCartAdapter;
-import zz.wohui.zz.callback.AddCartCallBack;
-import zz.wohui.zz.callback.GoodsListCallBack;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.utils.MyUtils;
-import zz.wohui.zz.utils.ShopCartDatabaseHelper;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.GoodsListBean.DataEntity.GoodsEntity;
+import zz.wohui.wohui365.adapter.GoodsListAdapter;
+import zz.wohui.wohui365.adapter.ShopCartAdapter;
+import zz.wohui.wohui365.callback.AddCartCallBack;
+import zz.wohui.wohui365.callback.GoodsListCallBack;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.utils.MyUtils;
+import zz.wohui.wohui365.utils.ShopCartDatabaseHelper;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：商店内搜索页面

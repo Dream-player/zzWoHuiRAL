@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -16,11 +16,11 @@ import android.widget.Toast;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.Callback;
 
-import zz.wohui.zz.myview.MyProgressDialog;
-import zz.wohui.zz.utils.MyKey;
-import zz.wohui.zz.utils.SystemBarTintManager;
-import zz.wohui.zz.whcouldsupermarket.MyApplication;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.myview.MyProgressDialog;
+import zz.wohui.wohui365.utils.MyKey;
+import zz.wohui.wohui365.utils.SystemBarTintManager;
+import zz.wohui.wohui365.MyApplication;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：项目中Activity的基类

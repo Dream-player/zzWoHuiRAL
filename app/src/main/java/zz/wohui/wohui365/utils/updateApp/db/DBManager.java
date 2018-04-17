@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils.updateApp.db;
+package zz.wohui.wohui365.utils.updateApp.db;
 
 public class DBManager {
 

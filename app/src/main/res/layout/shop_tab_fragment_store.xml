@@ -5,7 +5,7 @@
     android:background="@color/mainBGColor"
     android:orientation="vertical">
 
-    <whcs.wohui.zz.myview.OverScrollView
+    <zz.wohui.wohui365.myview.OverScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -219,6 +219,6 @@
 
         </LinearLayout>
 
-    </whcs.wohui.zz.myview.OverScrollView>
+    </zz.wohui.wohui365.myview.OverScrollView>
 
 </LinearLayout>

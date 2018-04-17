@@ -13,7 +13,7 @@ import zz.wohui.wohui365.Bean.ShopDetailBean;
 import zz.wohui.wohui365.activity.ShopActivity;
 import zz.wohui.wohui365.utils.LogUtils;
 import zz.wohui.wohui365.utils.ShopCellectDBHelper;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：商家——商家详情

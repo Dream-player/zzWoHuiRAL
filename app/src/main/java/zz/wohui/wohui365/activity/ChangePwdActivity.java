@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：修改密码页面

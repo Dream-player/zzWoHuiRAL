@@ -12,7 +12,7 @@ import zz.wohui.wohui365.url.Urls;
 import zz.wohui.wohui365.utils.LogUtils;
 import zz.wohui.wohui365.utils.updateApp.todo.UpdateChecker;
 import zz.wohui.wohui365.utils.updateApp.util.CommonUtil;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：更多页面—版本号 检查更新 关于我惠等

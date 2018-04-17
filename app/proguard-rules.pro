@@ -20,8 +20,8 @@
 -dontwarn com.baidu.**
 -dontwarn org.apache.http.**
 #---------------------------------实体类-------------------------------------
--keep class whcs.wohui.zz.Bean.**{*;}
--keep class whcs.wohui.zz.fragment.**{*;}
+-keep class zz.wohui.zz.Bean.**{*;}
+-keep class zz.wohui.zz.fragment.**{*;}
 #---------------------------------基本指令区----------------------------------
 -optimizationpasses 5
 -dontusemixedcaseclassnames

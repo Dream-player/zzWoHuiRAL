@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -16,17 +16,17 @@ import android.widget.Toast;
 import java.util.List;
 
 import okhttp3.Call;
-import zz.wohui.zz.Bean.AddressBean;
-import zz.wohui.zz.Bean.IsSuccessBean;
-import zz.wohui.zz.adapter.AddressManageAdapter;
-import zz.wohui.zz.callback.AddressCallBack;
-import zz.wohui.zz.callback.IsSuccessCallBack;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.utils.MyUtils;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.AddressBean;
+import zz.wohui.wohui365.Bean.IsSuccessBean;
+import zz.wohui.wohui365.adapter.AddressManageAdapter;
+import zz.wohui.wohui365.callback.AddressCallBack;
+import zz.wohui.wohui365.callback.IsSuccessCallBack;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.utils.MyUtils;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：管理收货地址页面

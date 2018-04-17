@@ -1,4 +1,4 @@
-package zz.wohui.wohui365.whcouldsupermarket;
+package zz.wohui.wohui365;
 
 import android.content.Context;
 import android.content.Intent;
@@ -36,7 +36,7 @@ public class MainActivity extends BaseActivity {
         this.location = location;
     }
 
-    private String texts[] = {"首页", "商城", "分类", "我的"};//"购物车"
+    private String texts[] = {"商城", "分类", "发现", "我的"};//"购物车"
     private Class fragmentArray[] = {
             BlankFragment1.class,
             BlankFragment2.class,
@@ -49,11 +49,11 @@ public class MainActivity extends BaseActivity {
     private long fastTime = 0;
 
     private int imageBG[] = {
-            R.drawable.tab_content_image_selector1,
-            R.drawable.tab_content_image_selector4,
+            zz.wohui.wohui365.R.drawable.tab_content_image_selector1,
+            zz.wohui.wohui365.R.drawable.tab_content_image_selector4,
 //            R.drawable.tab_content_image_selector5,
-            R.drawable.tab_content_image_selector2,
-            R.drawable.tab_content_image_selector3};
+            zz.wohui.wohui365.R.drawable.tab_content_image_selector2,
+            zz.wohui.wohui365.R.drawable.tab_content_image_selector3};
     private long secondTime;
 
     private FrameLayout mainContent;
@@ -62,9 +62,9 @@ public class MainActivity extends BaseActivity {
 
 
     private void assignViews() {
-        mainContent = (FrameLayout) findViewById(R.id.mainContent);
-        tabHost = (MyFragmentTabHost) findViewById(R.id.tabHost);
-        tabContent = (FrameLayout) findViewById(R.id.tabContent);
+        mainContent =  findViewById(R.id.mainContent);
+        tabHost = (MyFragmentTabHost) findViewById(zz.wohui.wohui365.R.id.tabHost);
+        tabContent = (FrameLayout) findViewById(zz.wohui.wohui365.R.id.tabContent);
     }
 
     private Context ctx;
@@ -74,11 +74,11 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void myOnCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_main);
+        setContentView(zz.wohui.wohui365.R.layout.activity_main);
         ctx = MainActivity.this;
 
         assignViews();
-        tabHost.setup(ctx, getSupportFragmentManager(), R.id.mainContent);
+        tabHost.setup(ctx, getSupportFragmentManager(), zz.wohui.wohui365.R.id.mainContent);
         for (int i = 0; i < texts.length; i++) {
             TabHost.TabSpec spec = tabHost.newTabSpec(texts[i]).setIndicator(getView(i));
             tabHost.addTab(spec, fragmentArray[i], null);
@@ -103,9 +103,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private View getView(int i) {
-        View view = View.inflate(ctx, R.layout.tabcontent, null);
-        ImageView tabContentImage = (ImageView) view.findViewById(R.id.tabContentImage);
-        TextView tabContentName = (TextView) view.findViewById(R.id.tabContentName);
+        View view = View.inflate(ctx, zz.wohui.wohui365.R.layout.tabcontent, null);
+        ImageView tabContentImage = (ImageView) view.findViewById(zz.wohui.wohui365.R.id.tabContentImage);
+        TextView tabContentName = (TextView) view.findViewById(zz.wohui.wohui365.R.id.tabContentName);
         tabContentImage.setImageResource(imageBG[i]);
         tabContentName.setText(texts[i]);
         return view;

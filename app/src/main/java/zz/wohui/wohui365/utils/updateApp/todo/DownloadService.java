@@ -26,7 +26,7 @@ import zz.wohui.wohui365.utils.updateApp.multithread.DownloadProgressListener;
 import zz.wohui.wohui365.utils.updateApp.multithread.FileDownloader;
 import zz.wohui.wohui365.utils.updateApp.util.CommonUtil;
 import zz.wohui.wohui365.utils.updateApp.util.LogUtil;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：

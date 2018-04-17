@@ -1,4 +1,4 @@
-package zz.wohui.zz.fragment;
+package zz.wohui.wohui365.fragment;
 
 import android.app.Activity;
 import android.content.Context;
@@ -13,9 +13,9 @@ import com.shizhefei.fragment.LazyFragment;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.Callback;
 
-import zz.wohui.zz.activity.LoginActivity;
-import zz.wohui.zz.myview.MyProgressDialog;
-import zz.wohui.zz.utils.MyKey;
+import zz.wohui.wohui365.activity.LoginActivity;
+import zz.wohui.wohui365.myview.MyProgressDialog;
+import zz.wohui.wohui365.utils.MyKey;
 
 /**
  * 说明：Fragment的基类

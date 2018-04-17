@@ -1,4 +1,4 @@
-package zz.wohui.zz.myview;
+package zz.wohui.wohui365.myview;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -12,8 +12,8 @@ import android.widget.PopupWindow;
 
 import java.util.List;
 
-import zz.wohui.zz.adapter.SpinnerAdapter;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.adapter.SpinnerAdapter;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：自定义Spinner的弹出框

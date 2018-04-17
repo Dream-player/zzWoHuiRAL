@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils;
+package zz.wohui.wohui365.utils;
 
 /**
  * 说明：Intent传值的key

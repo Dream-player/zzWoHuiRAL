@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -31,11 +31,11 @@ import com.baidu.mapapi.search.poi.PoiSearch;
 import java.util.ArrayList;
 import java.util.List;
 
-import zz.wohui.zz.adapter.MyBaseAdapter;
-import zz.wohui.zz.service.LocationService;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyKey;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.adapter.MyBaseAdapter;
+import zz.wohui.wohui365.service.LocationService;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyKey;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：输入地址 自定义定位的Activity

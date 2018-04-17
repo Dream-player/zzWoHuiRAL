@@ -46,8 +46,8 @@ import zz.wohui.wohui365.utils.LogUtils;
 import zz.wohui.wohui365.utils.MyKey;
 import zz.wohui.wohui365.utils.MyOkHttpUtils;
 import zz.wohui.wohui365.utils.MyRequestParams;
-import zz.wohui.wohui365.whcouldsupermarket.MainActivity;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.MainActivity;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：主页面——首页

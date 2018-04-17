@@ -1,4 +1,4 @@
-package zz.wohui.zz.fragment;
+package zz.wohui.wohui365.fragment;
 
 import android.Manifest;
 import android.content.Context;
@@ -33,29 +33,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 import okhttp3.Call;
-import zz.wohui.zz.Bean.AdListBean;
-import zz.wohui.zz.Bean.GetNoticeBean;
-import zz.wohui.zz.Bean.GoodsListBean;
-import zz.wohui.zz.Bean.GoodsListBean.DataEntity.GoodsEntity;
-import zz.wohui.zz.Bean.NearbyShopBean;
-import zz.wohui.zz.activity.AdActivity;
-import zz.wohui.zz.activity.ShopActivity;
-import zz.wohui.zz.adapter.NearbyGoodsAdapter;
-import zz.wohui.zz.callback.AdListCallBack;
-import zz.wohui.zz.callback.GetNoticeCallBack;
-import zz.wohui.zz.callback.GoodsListCallBack;
-import zz.wohui.zz.callback.NearbyShopCallBack;
-import zz.wohui.zz.listener.SwipeListViewOnScrollListener;
-import zz.wohui.zz.myview.MyAlwaysRunTextView;
-import zz.wohui.zz.service.LocationService;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.whcouldsupermarket.MainActivity;
-import zz.wohui.zz.whcouldsupermarket.MyApplication;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.AdListBean;
+import zz.wohui.wohui365.Bean.GetNoticeBean;
+import zz.wohui.wohui365.Bean.GoodsListBean;
+import zz.wohui.wohui365.Bean.GoodsListBean.DataEntity.GoodsEntity;
+import zz.wohui.wohui365.Bean.NearbyShopBean;
+import zz.wohui.wohui365.activity.AdActivity;
+import zz.wohui.wohui365.activity.ShopActivity;
+import zz.wohui.wohui365.adapter.NearbyGoodsAdapter;
+import zz.wohui.wohui365.callback.AdListCallBack;
+import zz.wohui.wohui365.callback.GetNoticeCallBack;
+import zz.wohui.wohui365.callback.GoodsListCallBack;
+import zz.wohui.wohui365.callback.NearbyShopCallBack;
+import zz.wohui.wohui365.listener.SwipeListViewOnScrollListener;
+import zz.wohui.wohui365.myview.MyAlwaysRunTextView;
+import zz.wohui.wohui365.service.LocationService;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.MainActivity;
+import zz.wohui.wohui365.MyApplication;
+import zz.wohui.wohui365.R;
 
 
 /**

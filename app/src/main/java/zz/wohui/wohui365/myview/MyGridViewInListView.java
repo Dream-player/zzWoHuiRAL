@@ -1,4 +1,4 @@
-package zz.wohui.zz.myview;
+package zz.wohui.wohui365.myview;
 
 import android.content.Context;
 import android.util.AttributeSet;

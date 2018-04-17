@@ -1,4 +1,4 @@
-package zz.wohui.zz.myview;
+package zz.wohui.wohui365.myview;
 /*
  * Copyright (C) 2006 The Android Open Source Project
  *

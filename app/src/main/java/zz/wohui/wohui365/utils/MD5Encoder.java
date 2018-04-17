@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils;
+package zz.wohui.wohui365.utils;
 
 
 import java.security.MessageDigest;

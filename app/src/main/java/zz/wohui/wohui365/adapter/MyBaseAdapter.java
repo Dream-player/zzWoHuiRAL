@@ -1,4 +1,4 @@
-package zz.wohui.zz.adapter;
+package zz.wohui.wohui365.adapter;
 
 import android.content.Context;
 import android.widget.BaseAdapter;

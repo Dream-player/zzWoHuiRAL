@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils.updateApp.util;
+package zz.wohui.wohui365.utils.updateApp.util;
 
 import android.content.Context;
 import android.content.Intent;

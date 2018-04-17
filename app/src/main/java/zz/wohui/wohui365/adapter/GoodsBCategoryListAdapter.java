@@ -12,7 +12,7 @@ import java.util.List;
 import zz.wohui.wohui365.Bean.BCGoodsSortData;
 import zz.wohui.wohui365.myview.MyGridViewInListView;
 import zz.wohui.wohui365.utils.LogUtils;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：商品二到三级列表的适配器

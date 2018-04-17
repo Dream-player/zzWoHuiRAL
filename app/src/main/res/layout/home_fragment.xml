@@ -27,7 +27,7 @@
             android:layout_marginRight="0dp"
             android:background="@drawable/location_title_go_icon"/>
 
-        <whcs.wohui.zz.myview.MyAlwaysRunTextView
+        <zz.wohui.wohui365.myview.MyAlwaysRunTextView
             android:id="@+id/userLocationAdd"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

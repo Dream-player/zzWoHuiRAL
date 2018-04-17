@@ -102,7 +102,7 @@
                     android:textStyle="bold"/>
 
 
-                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                <zz.wohui.wohui365.myview.MyPayMethodLinearLayout
                     android:id="@+id/payMethodWX"
                     xmlns:custom="http://schemas.android.com/apk/res-auto"
                     android:layout_width="match_parent"
@@ -113,7 +113,7 @@
                     custom:methodMark="推荐安装微信客户端的用户使用"
                     custom:methodTitle="微信支付"/>
 
-                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                <zz.wohui.wohui365.myview.MyPayMethodLinearLayout
                     android:id="@+id/payMethodAL"
                     xmlns:custom="http://schemas.android.com/apk/res-auto"
                     android:layout_width="match_parent"
@@ -125,7 +125,7 @@
                     custom:methodTitle="支付宝支付"
                     android:visibility="gone"/>
 
-                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                <zz.wohui.wohui365.myview.MyPayMethodLinearLayout
                     android:id="@+id/payMethodWH"
                     xmlns:custom="http://schemas.android.com/apk/res-auto"
                     android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                     custom:methodIsMark="true"
                     custom:methodMark="推荐我惠卡会员使用"
                     custom:methodTitle="我惠卡支付"/>
-                <whcs.wohui.zz.myview.MyPayMethodLinearLayout
+                <zz.wohui.wohui365.myview.MyPayMethodLinearLayout
                     android:id="@+id/payMethodXFJJ"
                     xmlns:custom="http://schemas.android.com/apk/res-auto"
                     android:layout_width="match_parent"

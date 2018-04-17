@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@color/homeTabHostTitleLine"/>
-    <whcs.wohui.zz.myview.MyFragmentTabHost
+    <zz.wohui.wohui365.myview.MyFragmentTabHost
         android:id="@+id/tabHost"
         android:background="@color/homeTabHostBg"
         android:layout_width="match_parent"
@@ -30,6 +30,6 @@
             android:layout_height="0dp"
             android:layout_weight="0"
             />
-    </whcs.wohui.zz.myview.MyFragmentTabHost>
+    </zz.wohui.wohui365.myview.MyFragmentTabHost>
 
 </LinearLayout>

@@ -25,8 +25,8 @@ import zz.wohui.wohui365.Bean.GoodsListBean.DataEntity.GoodsEntity;
 import zz.wohui.wohui365.activity.GoodsDetailActivity;
 import zz.wohui.wohui365.utils.LogUtils;
 import zz.wohui.wohui365.utils.ShopCartDatabaseHelper;
-import zz.wohui.wohui365.whcouldsupermarket.MyApplication;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.MyApplication;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：商家详情中商品列表

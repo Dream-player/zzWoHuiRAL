@@ -39,8 +39,8 @@ import zz.wohui.wohui365.url.Urls;
 import zz.wohui.wohui365.utils.LogUtils;
 import zz.wohui.wohui365.utils.MyOkHttpUtils;
 import zz.wohui.wohui365.utils.MyRequestParams;
-import zz.wohui.wohui365.whcouldsupermarket.MyApplication;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.MyApplication;
+import zz.wohui.wohui365.R;
 
 /**
  * 作者：陈杰宇

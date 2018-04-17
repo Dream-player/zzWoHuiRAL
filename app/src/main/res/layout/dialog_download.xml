@@ -23,7 +23,7 @@
         android:layout_height="3dp"
         android:background="#31b5e6" />
 
-    <whcs.wohui.zz.utils.updateApp.ui.RoundProgressBar
+    <zz.wohui.wohui365.utils.updateApp.ui.RoundProgressBar
         android:id="@+id/roundProgressBar"
         android:layout_width="50dp"
         android:layout_height="50dp"

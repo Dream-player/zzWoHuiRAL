@@ -27,7 +27,7 @@
             android:textColor="@color/color_red"
             android:textSize="14sp"/>
 
-    <whcs.wohui.zz.myview.MyAlwaysRunTextView
+    <zz.wohui.wohui365.myview.MyAlwaysRunTextView
         android:id="@+id/userLocationAdd1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

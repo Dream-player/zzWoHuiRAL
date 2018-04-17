@@ -15,7 +15,7 @@ import java.util.List;
 import zz.wohui.wohui365.Bean.ShopCollectData;
 import zz.wohui.wohui365.adapter.UserCollectAdapter;
 import zz.wohui.wohui365.utils.ShopCellectDBHelper;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：我的收藏页面

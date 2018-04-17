@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils.updateApp.db;
+package zz.wohui.wohui365.utils.updateApp.db;
 
 
 
@@ -6,7 +6,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import zz.wohui.zz.utils.updateApp.util.LogUtil;
+import zz.wohui.wohui365.utils.updateApp.util.LogUtil;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
 

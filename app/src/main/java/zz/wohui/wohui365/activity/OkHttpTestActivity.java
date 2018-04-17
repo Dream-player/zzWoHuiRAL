@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import de.greenrobot.event.EventBus;
 import zz.wohui.wohui365.utils.LogUtils;
 import zz.wohui.wohui365.utils.MyOkHttpUtils;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：

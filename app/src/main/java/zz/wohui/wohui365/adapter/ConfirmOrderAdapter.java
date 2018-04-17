@@ -1,4 +1,4 @@
-package zz.wohui.zz.adapter;
+package zz.wohui.wohui365.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.whcouldsupermarket.R;
-import zz.wohui.zz.Bean.ShopCartListBean.DataEntity;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.R;
+import zz.wohui.wohui365.Bean.ShopCartListBean.DataEntity;
 
 /**
  * 说明：确认订单页面 商品列表适配

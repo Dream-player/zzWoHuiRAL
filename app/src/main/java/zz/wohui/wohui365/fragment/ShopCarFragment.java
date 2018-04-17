@@ -3,8 +3,8 @@ package zz.wohui.wohui365.fragment;
 import android.content.Context;
 import android.view.View;
 
-import zz.wohui.wohui365.whcouldsupermarket.MainActivity;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.MainActivity;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：个人中心导航页

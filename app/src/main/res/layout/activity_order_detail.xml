@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:background="@color/white">
 
-            <whcs.wohui.zz.myview.OrderTimeActiveView
+            <zz.wohui.wohui365.myview.OrderTimeActiveView
                 xmlns:custom="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/myVStatus"
                 android:layout_width="match_parent"
@@ -89,7 +89,7 @@
                 android:paddingLeft="13dp"
                 android:paddingRight="13dp"
                 android:layout_marginTop="10dp"/>
-            <whcs.wohui.zz.myview.MyListViewInListView
+            <zz.wohui.wohui365.myview.MyListViewInListView
                 android:id="@+id/lv_order_goods"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

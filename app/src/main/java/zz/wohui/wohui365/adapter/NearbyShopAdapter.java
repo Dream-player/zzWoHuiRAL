@@ -18,7 +18,7 @@ import java.util.List;
 
 import zz.wohui.wohui365.Bean.NearbyShopBean;
 import zz.wohui.wohui365.activity.BDMapActivity;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：

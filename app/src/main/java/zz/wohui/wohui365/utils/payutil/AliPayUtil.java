@@ -1,4 +1,4 @@
-package zz.wohui.zz.utils.payutil;
+package zz.wohui.wohui365.utils.payutil;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -15,8 +15,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
-import zz.wohui.zz.activity.OrderDetailsActivity;
-import zz.wohui.zz.url.Urls;
+import zz.wohui.wohui365.activity.OrderDetailsActivity;
+import zz.wohui.wohui365.url.Urls;
 
 public class AliPayUtil {
 

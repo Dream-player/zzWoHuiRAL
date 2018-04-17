@@ -1,4 +1,4 @@
-package zz.wohui.zz.adapter;
+package zz.wohui.wohui365.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -7,8 +7,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import zz.wohui.zz.Bean.GoodsSortData;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.GoodsSortData;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：三级列表适配器

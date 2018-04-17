@@ -36,8 +36,8 @@ import zz.wohui.wohui365.utils.updateApp.multithread.FileDownloader;
 import zz.wohui.wohui365.utils.updateApp.util.CommonUtil;
 import zz.wohui.wohui365.utils.updateApp.util.HttpUtil;
 import zz.wohui.wohui365.utils.updateApp.util.LogUtil;
-import zz.wohui.wohui365.whcouldsupermarket.MainActivity;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.MainActivity;
+import zz.wohui.wohui365.R;
 
 
 public class WelcomeActivity extends Activity {

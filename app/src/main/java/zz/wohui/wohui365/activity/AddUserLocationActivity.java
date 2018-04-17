@@ -49,8 +49,8 @@ import zz.wohui.wohui365.adapter.MyBaseAdapter;
 import zz.wohui.wohui365.service.LocationService;
 import zz.wohui.wohui365.utils.LogUtils;
 import zz.wohui.wohui365.utils.MyKey;
-import zz.wohui.wohui365.whcouldsupermarket.MyApplication;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.MyApplication;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：

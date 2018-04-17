@@ -1,4 +1,4 @@
-package zz.wohui.zz.fragment;
+package zz.wohui.wohui365.fragment;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,14 +9,14 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import zz.wohui.zz.activity.AddressManageActivity;
-import zz.wohui.zz.activity.MoreActivity;
-import zz.wohui.zz.activity.UserCollectionActivity;
-import zz.wohui.zz.activity.UserInfoActivity;
-import zz.wohui.zz.activity.UserPurseActivity;
-import zz.wohui.zz.utils.MyKey;
-import zz.wohui.zz.whcouldsupermarket.MainActivity;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.activity.AddressManageActivity;
+import zz.wohui.wohui365.activity.MoreActivity;
+import zz.wohui.wohui365.activity.UserCollectionActivity;
+import zz.wohui.wohui365.activity.UserInfoActivity;
+import zz.wohui.wohui365.activity.UserPurseActivity;
+import zz.wohui.wohui365.utils.MyKey;
+import zz.wohui.wohui365.MainActivity;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：个人中心导航页

@@ -1,4 +1,4 @@
-package zz.wohui.wohui365.whcouldsupermarket;
+package zz.wohui.wohui365;
 
 import android.app.Application;
 import android.app.Service;

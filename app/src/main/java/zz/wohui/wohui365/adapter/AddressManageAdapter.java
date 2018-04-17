@@ -1,4 +1,4 @@
-package zz.wohui.zz.adapter;
+package zz.wohui.wohui365.adapter;
 
 import android.content.Context;
 import android.view.View;
@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import zz.wohui.zz.Bean.AddressBean;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.AddressBean;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：收货地址管理

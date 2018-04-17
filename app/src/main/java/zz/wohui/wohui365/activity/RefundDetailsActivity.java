@@ -1,11 +1,11 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：退款详情页面

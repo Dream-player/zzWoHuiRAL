@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -23,24 +23,24 @@ import net.sourceforge.simcpux.MD5;
 import java.util.Random;
 
 import okhttp3.Call;
-import zz.wohui.zz.Bean.NormalBean;
-import zz.wohui.zz.Bean.OrderDetailBean;
-import zz.wohui.zz.Bean.OrderDetailData;
-import zz.wohui.zz.Bean.WXPrepayIDBean;
-import zz.wohui.zz.Bean.WXPrepayIDBean.DataEntity;
-import zz.wohui.zz.callback.NormalCallBack;
-import zz.wohui.zz.callback.OrderDetailCallBack;
-import zz.wohui.zz.callback.WXPrepayIDCallBack;
-import zz.wohui.zz.myview.MyPayMethodLinearLayout;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MD5Encoder;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.utils.MyUtils;
-import zz.wohui.zz.utils.payutil.AliPayUtil;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.NormalBean;
+import zz.wohui.wohui365.Bean.OrderDetailBean;
+import zz.wohui.wohui365.Bean.OrderDetailData;
+import zz.wohui.wohui365.Bean.WXPrepayIDBean;
+import zz.wohui.wohui365.Bean.WXPrepayIDBean.DataEntity;
+import zz.wohui.wohui365.callback.NormalCallBack;
+import zz.wohui.wohui365.callback.OrderDetailCallBack;
+import zz.wohui.wohui365.callback.WXPrepayIDCallBack;
+import zz.wohui.wohui365.myview.MyPayMethodLinearLayout;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MD5Encoder;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.utils.MyUtils;
+import zz.wohui.wohui365.utils.payutil.AliPayUtil;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：订单支付

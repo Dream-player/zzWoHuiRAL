@@ -41,7 +41,7 @@ import zz.wohui.wohui365.utils.MyRequestParams;
 import zz.wohui.wohui365.utils.MyUtils;
 import zz.wohui.wohui365.utils.ShopCartDatabaseHelper;
 
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 
 /**

@@ -1,4 +1,4 @@
-package zz.wohui.zz.Bean;
+package zz.wohui.wohui365.Bean;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -16,20 +16,20 @@ import android.widget.TextView;
 import java.util.List;
 
 import okhttp3.Call;
-import zz.wohui.zz.Bean.OrderDetailBean;
-import zz.wohui.zz.Bean.OrderDetailData;
-import zz.wohui.zz.Bean.ShopDetailBean;
-import zz.wohui.zz.adapter.OrderListItemGoodsAdapter;
-import zz.wohui.zz.callback.OrderDetailCallBack;
-import zz.wohui.zz.callback.ShopDetailCallBack;
-import zz.wohui.zz.myview.MyListViewInListView;
-import zz.wohui.zz.myview.OrderTimeActiveView;
-import zz.wohui.zz.url.ParamsKey;
-import zz.wohui.zz.url.Urls;
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.utils.MyOkHttpUtils;
-import zz.wohui.zz.utils.MyRequestParams;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.Bean.OrderDetailBean;
+import zz.wohui.wohui365.Bean.OrderDetailData;
+import zz.wohui.wohui365.Bean.ShopDetailBean;
+import zz.wohui.wohui365.adapter.OrderListItemGoodsAdapter;
+import zz.wohui.wohui365.callback.OrderDetailCallBack;
+import zz.wohui.wohui365.callback.ShopDetailCallBack;
+import zz.wohui.wohui365.myview.MyListViewInListView;
+import zz.wohui.wohui365.myview.OrderTimeActiveView;
+import zz.wohui.wohui365.url.ParamsKey;
+import zz.wohui.wohui365.url.Urls;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.utils.MyOkHttpUtils;
+import zz.wohui.wohui365.utils.MyRequestParams;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：订单详情页面

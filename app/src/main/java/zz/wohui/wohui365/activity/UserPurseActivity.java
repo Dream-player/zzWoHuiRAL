@@ -15,7 +15,7 @@ import zz.wohui.wohui365.url.ParamsKey;
 import zz.wohui.wohui365.url.Urls;
 import zz.wohui.wohui365.utils.MyOkHttpUtils;
 import zz.wohui.wohui365.utils.MyRequestParams;
-import zz.wohui.wohui365.whcouldsupermarket.R;
+import zz.wohui.wohui365.R;
 
 /**
  * 说明：基本资料页面

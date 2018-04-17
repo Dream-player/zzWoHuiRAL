@@ -1,4 +1,4 @@
-package zz.wohui.zz.activity;
+package zz.wohui.wohui365.activity;
 
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -11,8 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import zz.wohui.zz.utils.LogUtils;
-import zz.wohui.zz.whcouldsupermarket.R;
+import zz.wohui.wohui365.utils.LogUtils;
+import zz.wohui.wohui365.R;
 
 /**
  * Created by zsy_18 on 2016/12/9.
